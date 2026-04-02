@@ -1,0 +1,2740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>Japan Trip — Adams Family · Apr 3–12, 2026 · v26</title>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Japan 2026"/>
+<meta name="theme-color" content="#09090e"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2309090e'/><text y='68' x='50' text-anchor='middle' font-size='62'>🗾</text></svg>"/>
+<link rel="manifest" href="manifest.json"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #09090e;
+    --surface: #111118;
+    --surface2: #17171f;
+    --border: #23232e;
+    --txt: #e4e4ef;
+    --muted: #7c7c99;
+    --accent: #e8c97a;   /* warm gold */
+    --accent2: #82d4c0;  /* teal */
+    --warn: #f0956a;
+    --red: #e06c75;
+    --tokyo: #7eb8f7;
+    --osaka: #f4a7a7;
+    --kyoto: #b8e0b0;
+    --disney: #c9b4f0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    background: var(--bg);
+    color: var(--txt);
+    padding-bottom: 60px;
+    line-height: 1.55;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(9,9,14,0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+  }
+  .header-inner {
+    max-width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .site-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 18px;
+    letter-spacing: .3px;
+    margin: 0;
+    color: var(--accent);
+  }
+  .site-sub {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .nav-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .nav-pills a {
+    font-size: 11px;
+    padding: 4px 9px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-decoration: none;
+    transition: border-color .15s, color .15s;
+    white-space: nowrap;
+  }
+  .nav-pills a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── LAYOUT ── */
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 20px 18px; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media(min-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 16px 14px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .2s;
+  }
+  .card:hover { border-color: #303044; }
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,255,255,.018) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* ── CARD HEADER ── */
+  .day {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .day h2 {
+    margin: 0;
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--txt);
+  }
+  .pill {
+    flex-shrink: 0;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 99px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .pill-tokyo  { background: rgba(126,184,247,.15); color: var(--tokyo);  border: 1px solid rgba(126,184,247,.25); }
+  .pill-osaka  { background: rgba(244,167,167,.15); color: var(--osaka);  border: 1px solid rgba(244,167,167,.25); }
+  .pill-kyoto  { background: rgba(184,224,176,.15); color: var(--kyoto);  border: 1px solid rgba(184,224,176,.25); }
+  .pill-disney { background: rgba(201,180,240,.15); color: var(--disney); border: 1px solid rgba(201,180,240,.25); }
+  .pill-depart { background: rgba(248,200,120,.15); color: var(--accent);  border: 1px solid rgba(248,200,120,.25); }
+  .pill-info   { background: rgba(130,212,192,.15); color: var(--accent2); border: 1px solid rgba(130,212,192,.25); }
+  .pill-disney { background: rgba(180,140,255,.15); color: #c9aaff; border: 1px solid rgba(180,140,255,.25); }
+  .pill-sakura { background: rgba(255,183,197,.15); color: #ffb7c5; border: 1px solid rgba(255,183,197,.25); }
+
+  /* ── META / NOTE ── */
+  .meta {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    line-height: 1.45;
+  }
+
+  /* ── SCHEDULE LIST ── */
+  ul.sched {
+    margin: 8px 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul.sched li {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 6px;
+    font-size: 13px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,.04);
+    align-items: baseline;
+  }
+  ul.sched li:last-child { border-bottom: none; }
+  .time {
+    font-size: 11.5px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    padding-top: 1px;
+    font-weight: 500;
+  }
+  .item { flex: 1; }
+  .item b { font-weight: 600; color: var(--txt); }
+  .note {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .optional { color: var(--accent); font-size: 11px; font-weight: 500; }
+
+  /* ── MAP BUTTONS ── */
+  .maps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 11.5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: border-color .15s, color .15s;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn::before {
+    content: '↗';
+    font-size: 10px;
+    opacity: .6;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: rgba(240,149,106,.07);
+    border: 1px solid rgba(240,149,106,.2);
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: #f4b89e;
+    line-height: 1.45;
+  }
+  .callout b { color: var(--warn); }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    margin: 28px 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── FOOD PIVOT CARD (full-width) ── */
+  .card-wide {
+    grid-column: 1 / -1;
+  }
+  .pivot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+  }
+  @media(max-width: 600px) { .pivot-grid { grid-template-columns: 1fr; } }
+  .pivot-section h3 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: var(--accent2);
+    margin: 12px 0 6px;
+  }
+  ul.pivot {
+    margin: 0;
+    padding: 0 0 0 14px;
+  }
+  ul.pivot li {
+    font-size: 12.5px;
+    margin: 6px 0;
+    line-height: 1.4;
+    color: var(--txt);
+  }
+  ul.pivot li b { font-weight: 600; }
+  ul.pivot li span { color: var(--muted); }
+
+  /* ── HOW-TO CARD ── */
+  ul.howto {
+    margin: 8px 0 0 0;
+    padding: 0 0 0 16px;
+  }
+  ul.howto li {
+    font-size: 13px;
+    margin: 7px 0;
+    line-height: 1.4;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 1020px;
+    margin: 40px auto 0;
+    padding: 0 18px;
+    font-size: 11.5px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    line-height: 1.5;
+  }
+  /* iOS safe areas */
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .site-header {
+    padding-top: max(16px, env(safe-area-inset-top));
+  }
+</style>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+</script>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header>
+  <div class="header-inner">
+    <div>
+      <h1 class="site-title">Japan 2026 · Adams Family</h1>
+      <div class="site-sub">Apr 3–12 &nbsp;·&nbsp; Tokyo → Osaka → Kyoto → Disney → Tokyo</div>
+    </div>
+    <nav class="nav-pills" aria-label="Jump to day">
+      <a href="#apr3">Apr 3</a>
+      <a href="#apr4">Apr 4</a>
+      <a href="#apr5">Apr 5</a>
+      <a href="#apr6">Apr 6</a>
+      <a href="#apr7">Apr 7</a>
+      <a href="#apr8">Apr 8</a>
+      <a href="#apr9">Apr 9</a>
+      <a href="#apr10">Apr 10</a>
+      <a href="#apr11">Apr 11</a>
+      <a href="#apr12">Apr 12</a>
+      <a href="#sakura">Sakura</a>
+      <a href="#late-night">🌙 Late Night</a>
+      <a href="#bakeries">🥐 Bakeries</a>
+      <a href="#ginza-bars">🍸 Ginza Bars</a>
+      <a href="#hotels">Hotels</a>
+      <a href="#budget">¥ Budget</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<div class="wrap">
+
+  <!-- HOW TO USE -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="day">
+      <h2>How to use this guide</h2>
+      <span class="pill pill-info">Workflow</span>
+    </div>
+    <ul class="howto">
+      <li><b>Morning:</b> open the day card, tap map links, follow the cluster.</li>
+      <li><b>Lunch / dinner:</b> use Food Pivot restaurants if lines or energy change.</li>
+      <li><b>Optional shops</b> (Son of Cheese, FFFFFT) are on-path but fully skippable — enter only if energy allows.</li>
+      <li>Save this file to your phone for offline access. Konbini essentials: 7‑Eleven · FamilyMart · Lawson.</li>
+    </ul>
+  </div>
+
+  <!-- ─── TOKYO ARRIVAL ─── -->
+  <div class="section-header">Tokyo</div>
+  <div class="grid">
+
+    <!-- APR 3 -->
+    <section class="card" id="apr3">
+      <div class="day">
+        <h2>Apr 3 (Fri) — Arrival + Dinner</h2>
+        <span class="pill pill-tokyo">Tokyo</span>
+      </div>
+      <div class="meta"><b>Hotel:</b> Caption by Hyatt Kabutocho</div>
+      <ul class="sched">
+        <li>
+          <span class="time">Narita</span>
+          <span class="item">
+            <b>Get yen + Suica IC cards</b>
+            <div class="note">Withdraw yen from a 7-Bank ATM (inside the terminal 7-Eleven or post office ATMs). Buy 4× Suica/Pasmo IC cards at the JR ticket machines near the Narita Express gates — load ¥3,000–5,000 each. These work on all trains, buses, and konbini payments across Tokyo, Osaka, and Kyoto. Do this before leaving the airport.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">Before trip</span>
+          <span class="item">
+            <b>Mint Mobile eSIM</b>
+            <div class="note">Set up eSIMs on all phones before departure — activate international data through the Mint Mobile app. Confirm Japan coverage is included in your plan. Having mobile data from the moment you land makes everything easier: Google Maps, LINE queue trackers, translation apps, and restaurant lookups.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">Afternoon</span>
+          <span class="item">
+            Check-in · short Nihonbashi / Kabutocho wander
+            <div class="note">💼 <b>At check-in, ask the concierge about takuhaibin luggage forwarding.</b> On Apr 5 checkout morning you'll send your large bags directly from Caption Kabutocho to Tokyo Disneyland Hotel — they'll be waiting when you check in Apr 7. Travel through Osaka Apr 5–7 with carry-on only. Arrange the service at check-in on Apr 3 so the concierge has the destination hotel details and packaging ready for your Apr 5 checkout. Budget ~¥1,500–2,500 per bag; delivery within 1–2 days is standard.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:30–9:30</span>
+          <span class="item">
+            <b>Dinner — pick one:</b>
+            <div class="note">
+              <b>Option A · 🍣 Kura Sushi Global Flagship · Ginza</b> — conveyor belt sushi · Marronnier Gate Ginza 2, 7F · Japan's most beautiful Kura Sushi, Edo-period themed with wooden interiors and lanterns. Tablet ordering in English, sushi arrives via express belt. Wide menu beyond sushi: karaage, ramen, udon, tempura, dango, desserts. Bikkura Pon gacha game every 5 plates — your son will be relentless. ¥2,000–3,000pp. ~10 min taxi from Kabutocho. Open until 11pm.<br><br>
+              <b>Option B · 🍢 Torikizoku Hatchobori</b> — yakitori izakaya · Hatchobori 1-11-3 DiaResto Tokyo Bldg B1F · <b>5-min walk from Caption Kabutocho</b> — the closest quality dinner option to the hotel. Japan's famous flat-price yakitori chain: every skewer and drink is ¥370 (≈¥2.50). Chicken thigh, breast, tsukune dumplings, wings, skin, cartilage, liver — plus pork, beef, vegetables, karaage, and rice dishes. iPad ordering in English, photo menu. Cubicle booths fit 4–8. Lively izakaya energy — office workers, locals, expats. Budget ¥2,000–3,000pp. Opens 5pm Fri. Online reservations available. Best pick if the family is jet-lagged and wants something easy, nearby, and reliably good without having to taxi anywhere.
+            </div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kura+Sushi+Ginza+Marronnier+Gate+Ginza+2" rel="noopener" target="_blank">Kura Sushi Ginza</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Torikizoku+Hatchobori+Tokyo+DiaResto" rel="noopener" target="_blank">Torikizoku Hatchobori</a>
+      </div>
+    </section>
+
+    <!-- APR 4 -->
+    <section class="card" id="apr4">
+      <div class="day">
+        <h2>Apr 4 (Sat) — Tsukiji → Ginza Fashion + Vintage → Higashiya → Censu</h2>
+        <span class="pill pill-tokyo">Ginza</span>
+      </div>
+      <div class="meta">Embroidery drop first. Morning heavy on fashion/design; afternoon relaxed.</div>
+      <ul class="sched">
+        <li>
+          <span class="time">7:00 AM</span>
+          <span class="item">
+            Taxi from Caption by Hyatt Kabutocho → Tsukiji (~10 min, ~¥1,000–1,500)
+            <div class="note">Show driver: <b>築地場外市場</b> (Tsukiji Jogai Ichiba) · or say "Tsukiji Jogai Ichiba, onegaishimasu"</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">7:30–9:00</span>
+          <span class="item">
+            <b>Tsukiji Outer Market</b> — grazing
+            <div class="note">Go early; street food market.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">9:30–10:10</span>
+          <span class="item">
+            <b>Onitsuka Tiger Ginza</b> — embroidery drop
+            <div class="note">6 Chome-5-6 Ginza, Chuo City 104-0061 · confirm pickup timing.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">10:15–11:00</span>
+          <span class="item">
+            <b>UNIQLO Ginza</b>
+            <div class="note">12-floor flagship; Japan-only basics.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:00–11:25</span>
+          <span class="item">
+            <b>MUJI Ginza</b>
+            <div class="note">Flagship design store; great small gifts.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:25–11:45</span>
+          <span class="item">
+            <b>@cosme TOKYO Ginza</b>
+            <div class="note">Beauty megastore; sunscreen + masks.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:45–12:05</span>
+          <span class="item">
+            <b>Tabio</b>
+            <div class="note">Premium Japanese socks.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">12:10–12:45</span>
+          <span class="item">
+            <b>Ginza Six</b> — Tsutaya Books highlight
+            <div class="note">Modern luxury mall.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">12:45–1:15</span>
+          <span class="item">
+            <b>Whitestone Gallery Ginza</b>
+            <div class="note">Established 1967 — two spaces in Ginza showing post-war to contemporary Japanese art. Strong collection of paintings, prints, and mixed media. Broader price range than Design Festa or Tagboat — some museum-level pieces but also accessible works. Free entry. They ship internationally. 5-min walk from Ginza Six.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">1:15–1:45</span>
+          <span class="item">
+            <b>Vintage: ALLU → KOMEHYO</b>
+            <div class="note">Curated vintage · large resale inventory.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">1:45–2:30</span>
+          <span class="item">
+            <b>🍜 Lunch — pick one</b>
+            <div class="note">
+              <b>Option A · AFURI Ginza Six (B2F)</b> — Yuzu shio ramen · no reservation needed · ~¥1,200–1,800pp. Light, citrus-bright broth — a good contrast to the heavier eating ahead this trip. You're already in Ginza Six for the shopping; just ride the escalators down. Best option if you want zero friction and something distinctly Japanese. Open from 11:00am, tends to queue by 12:30 — go before 1:30.<br><br>
+              <b>Option B · Tempura Tentora (Hibiya Midtown, 2F)</b> — Yasai Tendon (vegetable tempura on rice) + sashimi of the day · ~¥2,000pp · English menu. A 7-min walk toward Yurakucho — proper tempura in a casual wine-bar setting. Lighter than a full-set kaiseki but more substantial than ramen. Good split if one person wants tempura and another wants sashimi. Open 11am–4pm weekdays. Cards accepted.<br><br>
+              <b>Option C · Ginza Itsuki (Ginza Inz Bldg, 2F)</b> — Wagyu beef tendon bowl · ¥2,000pp · 3-min walk from Ginza Station. Casual, fast, family-friendly spot. If the kids want something they recognize (rice + meat in a bowl) and you want to keep moving through the afternoon, this is the low-commitment pick. Open 11am–3:30pm lunch.
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="time">2:45–3:45</span>
+          <span class="item">
+            <b>Itoya</b>
+            <div class="note">Iconic stationery flagship.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">3:45–4:15</span>
+          <span class="item">
+            <b>Chopstick Studio</b>
+            <div class="note">Custom chopsticks; meaningful souvenir.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">4:30</span>
+          <span class="item">
+            <b>HIGASHIYA Ginza</b> — tea
+            <div class="note">Modern wagashi + tea reset. Take your time — no queue to race to tonight.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">~7:50</span>
+          <span class="item">Taxi Ginza → Jingumae (~15 min, ~¥1,500)
+            <div class="note">Leaves ~25 min buffer before the 8:15 reservation — enough to arrive, find the entrance (it's a narrow townhouse, easy to miss), and settle in. No need to rush off from HIGASHIYA.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:15 PM</span>
+          <span class="item">
+            <b>🍽️ Censu Tokyo</b> — chef's table omakase · Jingumae ✅ RESERVED 20:15 · Res #N9M26M
+            <div class="note">Modern Japanese izakaya elevated to casual luxury — French + Hong Kong + Japanese technique in a stunning cedar-and-neon townhouse. Chef's table counter on the 1st floor seats you facing the open kitchen. Omakase dishes drawn from the à la carte menu — sashimi with yuzu kosho, corn tempura in honey butter, prawn toast with bonito flakes, Hainan chicken paella in scallop broth, yakionigiri in abalone dashi to close. Natural wine + sake list. English menu, English-speaking staff. Budget: ¥9,880–12,880pp depending on course chosen. Address: 2-12-9 Jingumae, Shibuya-ku (near Meiji Park / Kokuritsu Kyogijo Sta.).</div>
+          </span>
+        </li>
+      </ul>
+      <div class="callout" style="background:rgba(126,184,247,.07);border-color:rgba(126,184,247,.2);color:#a9cff5;"><b>Dad + Son split options:</b> While wife + daughter hit @cosme → Tabio → Ginza Six → vintage shops (11:25–1:45), dad + son can break off for any of these on-path diversions:
+        <br>• <b>Taito Station Ginza</b> — multi-floor arcade, crane games, rhythm games. 5-min walk from UNIQLO Ginza.
+        <br>• <b>Gashapon Bandai Official Shop (Ginza)</b> — wall-to-wall capsule machines at Hakuhinkan Toy Park, 4 Chome Ginza. Hundreds of machines, ¥200–500 each. The 11yo will lose his mind.
+        <br>• <b>Hakuhinkan Toy Park</b> — 4-floor toy store right next to gashapon. Japanese-only toys, model kits, puzzles.
+        <br>Regroup at Itoya (2:45) or lunch — all within a 5-min walk of each other.</div>
+
+      <div class="callout" style="background:rgba(232,201,122,.07);border-color:rgba(232,201,122,.25);color:#e8c97a;"><b>📷 Camera — Fujifilm X-E5: buy in Osaka on Apr 5, not here</b><br><br>
+        <b>🏆 Primary recommendation — Osaka Apr 5:</b> Fujifilm Imaging Plaza (Namba, next to the hotel) to handle and try the X-E5, then Naniwa Camera on the Shinsaibashisuji arcade to purchase. Zero detour from the day's route. See Apr 5 notes for full details.<br><br>
+        <b>If you want to buy in Tokyo instead:</b><br>
+        <b>🏆 Best price — Map Camera Shinjuku</b> — 1-13-2 Nishi-Shinjuku. New X-E5 + XF 23mm kit: <b>¥253,440</b> · used "美品" kit: ¥241,800 · used body only: ¥192,800. Cheaper than BicCamera across the board. ~15 min Marunouchi Line from Ginza. Check <a href="https://www.mapcamera.com/search?keyword=fujifilm+x-e5" style="color:var(--accent2)" target="_blank">mapcamera.com</a> the night before.<br>
+        <b>BicCamera Yurakucho</b> — 8-min walk from Ginza Six. Tax-free in-store (~¥255,000 for kit) but online price is ¥281,600 — more expensive than Map Camera new. Fallback only if Map Camera is sold out.<br><br>
+        <b>⚠️ Menu check:</b> Confirm English menus before buying. Ask: "English menu?" — X-E5 international units include English, but verify in store.</div>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=BicCamera+Yurakucho+1-11-1+Yurakucho+Tokyo" rel="noopener" target="_blank">BicCamera Yurakucho</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Map+Camera+Shinjuku+1-13-2+Nishi-Shinjuku" rel="noopener" target="_blank">Map Camera Shinjuku</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lemon-sha+Ginza+4-2-1+Ginza" rel="noopener" target="_blank">Lemon-sha</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Leica+Store+Ginza+Six" rel="noopener" target="_blank">Leica Store</a>
+        <a class="btn" href="https://www.mapcamera.com/search?keyword=fujifilm+x-e5" rel="noopener" target="_blank">mapcamera.com X-E5</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Taito+Station+Ginza" rel="noopener" target="_blank">Taito Station</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hakuhinkan+Toy+Park+Ginza" rel="noopener" target="_blank">Hakuhinkan Toy Park</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market" rel="noopener" target="_blank">Tsukiji Market</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Onitsuka+Tiger+Ginza+6+Chome-5-6+Ginza" rel="noopener" target="_blank">Onitsuka Tiger</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=UNIQLO+Ginza" rel="noopener" target="_blank">UNIQLO Ginza</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=MUJI+Ginza" rel="noopener" target="_blank">MUJI Ginza</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=%40cosme+TOKYO+Ginza" rel="noopener" target="_blank">@cosme</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tabio+Ginza" rel="noopener" target="_blank">Tabio</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ginza+Six" rel="noopener" target="_blank">Ginza Six</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Whitestone+Gallery+Ginza" rel="noopener" target="_blank">Whitestone Gallery</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=ALLU+Ginza" rel="noopener" target="_blank">ALLU</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=KOMEHYO+Ginza" rel="noopener" target="_blank">KOMEHYO</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Itoya+Ginza" rel="noopener" target="_blank">Itoya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Chopstick+Studio+Ginza" rel="noopener" target="_blank">Chopstick Studio</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Higashiya+Ginza" rel="noopener" target="_blank">HIGASHIYA</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=CENSU+TOKYO+Jingumae+Shibuya" rel="noopener" target="_blank">Censu Tokyo</a>
+      </div>
+    </section>
+
+  </div><!-- /grid -->
+
+  <!-- ─── OSAKA / KYOTO ─── -->
+  <div class="section-header">Osaka · Kyoto</div>
+  <div class="grid">
+
+    <!-- APR 5 -->
+    <section class="card" id="apr5">
+      <div class="day">
+        <h2>Apr 5 (Sun) — Early Shinkansen to Osaka + Full Afternoon + Omurice</h2>
+        <span class="pill pill-osaka">Osaka</span>
+      </div>
+      <div class="meta"><b>Anchor:</b> 8:39 AM Nozomi · Hotel: Caption by Hyatt Namba Osaka</div>
+      <div class="callout"><b>Leave Caption by Hyatt Kabutocho by 7:15 AM.</b> Walk ~13 min to Tokyo Station (or Tozai Line 1 stop, ¥210) → pick up ekiben in Gransta B1 → board Nozomi platform by 8:25 at the latest. Tokyo Station is large — give yourself time to navigate.</div>
+      <ul class="sched">
+        <li>
+          <span class="time">7:15 AM</span>
+          <span class="item">
+            Check out Caption by Hyatt Kabutocho · head to Tokyo Station
+            <div class="note">💼 <b>Send large bags via takuhaibin to Tokyo Disneyland Hotel at checkout</b> — arranged at check-in Apr 3. Travel to Osaka carry-on only. Two options: <b>Walk</b> — 13 min east along Eitai-dori, simple and flat. Good if bags are light and the kids are awake. <b>Train</b> — Tozai Line from Kayabacho Station (2-min walk from hotel) 1 stop to Nihombashi, then underground walkway to Tokyo Station (~6 min total, ¥210). Use the train if luggage is heavy. Tap Suica either way.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">7:30–8:20</span>
+          <span class="item">
+            <b>Ekiben House Matsuri</b> — Tokyo Station B1 Gransta concourse
+            <div class="note">From the Marunouchi entrance, follow signs to <b>Gransta</b> (underground B1 food hall) — Ekiben House Matsuri is in the central section. 170+ bento varieties. Don't overthink it; the queue moves fast.<br><br>
+            <b>Recommended picks:</b> Daruma Bento (red doll container — kids love it, from Takasaki) · Ikura &amp; Crab Bento (luxury option, ¥2,000+) · Tori Meshi chicken rice (classic, mild, kid-safe) · Makunouchi from Kiyoken (old-school assortment, the original station bento). Grab drinks from a nearby Family Mart or the Gransta kiosks — coffee for adults, tea or juice for kids.<br><br>
+            This is your lunch on the train — buy two hours before and eat after Mt Fuji passes (~10:20am).</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:25 AM</span>
+          <span class="item">
+            Head to Shinkansen platforms (tracks 14–19, Chuo concourse)
+            <div class="note">From Gransta B1, take escalators up to the main concourse level → follow <b>新幹線 / Shinkansen</b> signs to the fare gates. Tap Suica or present your reserved ticket at the IC gate. Your car + seat number is on the ticket — find your car number marked on the platform floor.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:39 AM</span>
+          <span class="item">
+            <b>Nozomi 27</b> — Tokyo → Shin‑Osaka (arr. 11:06) ✅ BOOKED
+            <div class="note">Seats on the <b>right side (seats D+E)</b> for the Mt Fuji view — appears ~40 min after departure, between Shin-Yokohama and Shizuoka. Look for a clear day. Kids near the window. Tell them to watch for the top appearing above the tree line — it happens fast.<br><br>Return leg (Apr 7): Mt Fuji on the <b>left side (seats A+B)</b>.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:06 AM</span>
+          <span class="item">
+            Arrive Shin-Osaka → Midosuji Line south to Namba Station (~24 min, tap Suica) → check in Caption by Hyatt Namba · drop bags
+            <div class="note">If room isn't ready, concierge will hold luggage. You now have a proper half day.<br><br>
+            <b>📷 Camera detour — buy the X-E5 here, not Tokyo:</b><br>
+            <b>Fujifilm Imaging Plaza Osaka</b> — Fujifilm's official showroom, 2F Midosuji Grand Building, 2-2-3 Namba (directly connected to Namba Station Exit 24 — essentially next to the hotel). Full X Series lineup to touch and try, expert staff, repairs and inspections. Open 10am–7pm, closed Tuesdays — Apr 5 is a Sunday ✅. Best place to handle the X-E5 before buying, even if you purchase elsewhere.<br>
+            <b>Naniwa Camera Shinsaibashi</b> — Osaka's leading camera specialist since 1938, 1-3-12 Shinsaibashisuji (right on the arcade you're walking this afternoon). New and used Fujifilm X Series, tax-free, English-friendly. Open 10:30am–7:30pm. Pick up the X-E5 body + 23mm kit here and skip the Tokyo shopping scramble entirely.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:30–1:00</span>
+          <span class="item">
+            <b>Shinsekai + Tsutenkaku Tower</b>
+            <div class="note">Retro neon district 15 min from the hotel — this is old Osaka at its most atmospheric. Climb Tsutenkaku Tower (¥900) for views over the city and look for the Billiken statue on the way up — rub his feet for good luck, your son will be into it. Jan Jan Yokocho alley has retro shooting galleries and crane machines for ¥100–200 each.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">1:15–2:00</span>
+          <span class="item">
+            <b>🍳 Dearbros Omurice</b> — lunch · Sennichimae, 5 min from hotel
+            <div class="note">4.5★ omurice specialist right between Shinsekai and Shinsaibashi — ¥1,000–2,000pp. A short walk from Shinsekai, then you're already heading in the right direction for the afternoon crawl.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">2:15–5:30</span>
+          <span class="item">
+            <b>Shinsaibashi-Suji + Amerikamura — afternoon crawl</b>
+            <div class="note">~15 min walk or one metro stop from Shinsekai. The covered arcade (Shinsaibashi-Suji) runs north-south with vintage purse shops clustered in the southern half. Amerikamura — "America Village" — branches off to the west and is where you and your son can split off while bags are being browsed. All within a 10-min walk of each other.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>👜 ALLU Shinsaibashi</b> — Hermès, Chanel, LV, Rolex, Goyard · English-speaking staff
+            <div class="note">Same brand as your Ginza day but entirely separate inventory — worth going through methodically.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>👜 Orange Boutique</b> — Hermès specialist · museum-level collection of rare Birkins and Kellys
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>👜 Hedy Osaka</b> — Chanel, LV, Celine in a renovated traditional warehouse · B-grade or better only
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>👜 Kindal Amerikamura</b> — <i>stretch goal</i> · luxury brands up to 90% off · lottery-style finds · only if time allows
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>🎮 Meanwhile — son: Amerikamura arcade + streetwear strip</b>
+            <div class="note">Triangle Park (Amerika-Mura's central plaza) is the hub. <b>Taito Station Amerikamura</b> is right there — multi-floor arcade with crane machines, rhythm games, medal games, all the hits. <b>Village Vanguard</b> nearby stocks weird toys, manga merch, and pop-culture oddities — good for 30 min of pure browsing. <b>Wego Amerikamura</b> is the go-to youth fashion shop — affordable, fun to look through even if you don't buy. All within a 3-min walk of Triangle Park.<br><br><b>🕹️ Also: BB Amerikamura (Amemura Freemarket B.B)</b> — New American Plaza Building 1F, right in the heart of Amemura. Wall-to-wall vintage Seiko watches, retro toys, cameras, games, and Japanese collectibles. Run by a genuine enthusiast, prices are surprisingly fair. One of the best vintage watch spots in Osaka — plan at least 30-45 min.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>🎴 Meanwhile — you: Shinsaibashi design + craft detour</b>
+            <div class="note"><b>Nishiya</b> (on the arcade) stocks Osaka-made lacquerware, textiles, and folk crafts — the kind of functional beautiful objects that don't exist in Tokyo department stores. <b>Standard Products by Daiso</b> is Daiso's upmarket line — well-designed everyday goods at ¥300–1,500, surprisingly good for gifts or personal finds. <b>Loft Shinsaibashi</b> (5 floors) has Osaka-exclusive stationery, tools, and lifestyle goods if you want to browse without intent. None of these require more than 20–30 min each.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">5:00–5:45</span>
+          <span class="item">
+            <b>🍊 Orange Street (Horie / Tachibana-dori)</b> — 3-min walk west of Triangle Park
+            <div class="note">Osaka's answer to Daikanyama — an 800m strip of independent boutiques, Japanese streetwear, and vintage shops that locals actually shop at. Completely different DNA from the tourist arcade. Walk west across Yotsubashi-suji from Amerikamura and you're there.<br><br>
+            <b>SKIT Horie</b> (1-21-16 Minamihorie, 2F) — the record-shop equivalent for sneakers. Rare, limited, and sought-after drops; Japanese and collabs. A genuine treasure hunt. 30 min minimum.<br>
+            <b>JAM Horie Orange Street</b> (2F/3F Avant-garde Bldg, 1-19-23 Minamihorie) — multi-floor vintage store with a strong denim floor (3F). American workwear, band tees, 80s–90s streetwear, plus a curated women's floor. One of the better vintage stores in the city.<br>
+            <b>Master-piece</b> (1-15-8 Minamihorie) — Japanese-made bags and accessories that sit between Porter and a proper fashion house. Excellent for a bag or wallet if you missed something at Ginza.<br><br>
+            ⚠️ <b>Many Orange Street shops close by 7–8pm</b> — aim to finish by 5:45 at the latest. Skip if Shinsaibashi runs long; keep if it wraps on time.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">6:30–7:45</span>
+          <span class="item">
+            <b>🥩 Kitan Hibiki</b> — dry-aged wagyu steak · Hozenji Yokocho ✅ RESERVED 18:30 · Res #SSN5365J5Q
+            <div class="note">Newest concept from the acclaimed Kitan Group (opened June 2024) · all counter seating, chef grills dry-aged wagyu over charcoal right in front of you · English menu + English-speaking staff · 5-min walk from the hotel. Budget ¥8,000–9,999pp.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:00–9:30</span>
+          <span class="item">
+            <b>Dotonbori night walk</b>
+            <div class="note">5-min walk from Kitan Hibiki — stroll the canal, find the Glico Running Man for the photo, grab a takoyaki from Aizuya or Kukuru, let your son loose on the arcade machines. Dotonbori at night sells itself. <b>Gaburi Chicken Namba (4-6-6 Namba)</b> is right in this area if anyone's still hungry — 8-min walk from the hotel, karaage + honetsukidori (whole bone-in thigh, slow-baked) + fruit highballs · open late · ¥1,500–2,000pp.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">9:30</span>
+          <span class="item">Walk back to Caption by Hyatt Namba (~10 min)</span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ekiben+House+Matsuri+Tokyo+Station" rel="noopener" target="_blank">Ekiben House Matsuri</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fujifilm+Imaging+Plaza+Osaka+Namba+Midosuji" rel="noopener" target="_blank">Fujifilm Imaging Plaza</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Naniwa+Camera+Shinsaibashisuji+Osaka" rel="noopener" target="_blank">Naniwa Camera</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" rel="noopener" target="_blank">Shinsekai</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tsutenkaku+Tower+Osaka" rel="noopener" target="_blank">Tsutenkaku</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Jan+Jan+Yokocho+Shinsekai+Osaka" rel="noopener" target="_blank">Jan Jan Yokocho</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kushikatsu+Daruma+Shinsekai" rel="noopener" target="_blank">Kushikatsu Daruma</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Dearbros+Omurice+Sennichimae+Osaka" rel="noopener" target="_blank">Dearbros Omurice</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Amerikamura+Freemarket+BB+Osaka" rel="noopener" target="_blank">BB Amerikamura</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Taito+Station+Amerikamura+Osaka" rel="noopener" target="_blank">Taito Station Amemura</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Village+Vanguard+Amerikamura+Osaka" rel="noopener" target="_blank">Village Vanguard</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Wego+Amerikamura+Osaka" rel="noopener" target="_blank">Wego</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Nishiya+Shinsaibashi+Osaka" rel="noopener" target="_blank">Nishiya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Loft+Shinsaibashi+Osaka" rel="noopener" target="_blank">Loft Shinsaibashi</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=ALLU+Shinsaibashi+Osaka" rel="noopener" target="_blank">ALLU</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Orange+Boutique+Shinsaibashi+Osaka" rel="noopener" target="_blank">Orange Boutique</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hedy+Osaka+Shinsaibashi" rel="noopener" target="_blank">Hedy</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kindal+Amerikamura+Osaka" rel="noopener" target="_blank">Kindal</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Orange+Street+Tachibana-dori+Minamihorie+Osaka" rel="noopener" target="_blank">Orange Street</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=SKIT+Horie+sneakers+Osaka" rel="noopener" target="_blank">SKIT Horie</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=JAM+Horie+Orange+Street+vintage+Osaka" rel="noopener" target="_blank">JAM Horie</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Master-piece+Minamihorie+Osaka" rel="noopener" target="_blank">Master-piece</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kitan+Hibiki+Namba+Osaka" rel="noopener" target="_blank">Kitan Hibiki</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" rel="noopener" target="_blank">Dotonbori</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Caption+by+Hyatt+Namba+Osaka" rel="noopener" target="_blank">Caption by Hyatt Namba</a>
+      </div>
+    </section>
+
+    <!-- APR 6 -->
+    <section class="card" id="apr6">
+      <div class="day">
+        <h2>Apr 6 (Mon) — Arashiyama → Higashiyama → Dotonbori Night</h2>
+        <span class="pill pill-kyoto">Kyoto + Osaka</span>
+      </div>
+      <div class="meta">Taxi bridge Arashiyama → Higashiyama to avoid transit friction. Start high, walk downhill.</div>
+      <div class="callout"><b>Leave Caption by Hyatt Namba by 7:00 AM.</b> Walk ~5 min to Namba Station → Sakaisuji Line to Kawaramachi (Kyoto) via Hankyu-Kyoto Line (~1 hr 15 min, ¥640, no reservation needed — tap Suica) → taxi to Arashiyama (~20 min) → arrive ~8:45 AM. Book taxi the evening before.</div>
+      <ul class="sched">
+        <li>
+          <span class="time">7:00 AM</span>
+          <span class="item">Leave Caption by Hyatt Namba → walk to Namba Station (~5 min)</span>
+        </li>
+        <li>
+          <span class="time">7:10 AM</span>
+          <span class="item">
+            Hankyu-Kyoto Line — Namba → Kawaramachi (Kyoto)
+            <div class="note">Sakaisuji Line from Namba → transfer to Hankyu-Kyoto Line at Awaji or Juso → Kawaramachi Station (~1 hr 15 min, ¥640, tap Suica). Kawaramachi is more central for a taxi to Arashiyama than Kyoto Station.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:25 AM</span>
+          <span class="item">Taxi from Kawaramachi → Arashiyama (~20 min, ~¥2,000–2,500)
+            <div class="note">Show driver: <b>嵐山・竹林の道</b> (Arashiyama · Bamboo Grove) · or say "Arashiyama, chikurin no michi, onegaishimasu"</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:45 AM</span>
+          <span class="item">Arrive Arashiyama</span>
+        </li>
+        <li>
+          <span class="time">8:45–10:20</span>
+          <span class="item">
+            <b>Arashiyama:</b> Bamboo Grove → Tenryu‑ji → Okochi Sanso Villa
+            <div class="note">Zen temple with garden · hidden villa garden escape.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">10:30</span>
+          <span class="item">Taxi to Higashiyama (~30–35 min, ~¥3,500)
+            <div class="note">Show driver: <b>清水寺 山門</b> (Kiyomizudera Sanmon) · or say "Kiyomizu-dera Sanmon, onegaishimasu"</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:15–12:00</span>
+          <span class="item">
+            <b>Kiyomizu‑dera</b> (main stage + veranda)
+            <div class="note">Iconic Kyoto temple.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">12:00–12:45</span>
+          <span class="item">
+            Sannenzaka → Ninenzaka descent — browse intentionally, skip long queues
+            <div class="note">Tea house options (pick one if energy allows): Tsujiri Gion · Kasagiya · Gion Tokuya</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">1:30</span>
+          <span class="item">
+            <b>Tempura Endo Yasaka</b> — lunch ✅ RESERVED · Res #AX2UVX
+          </span>
+        </li>
+        <li>
+          <span class="time">2:30–3:20</span>
+          <span class="item">
+            Sannenzaka / Ninenzaka → <b>Kanamitsuji</b>
+            <div class="note">Walking down from Kiyomizu-dera — use this stretch properly. <b>Asahido</b>: best Kyo-yaki ceramics on the street, proper Kyoto pottery not tourist trinkets; tea cups, sake cups, small plates. <b>Yojiya</b> (Kiyomizu Sannenzaka branch): famous aburatorigami oil-blotting paper and skincare — quintessentially Kyoto, very packable, great gifts. <b>Dotori Republic</b> (Studio Ghibli shop, Ninenzaka): Kyoto-exclusive Ghibli designs, giant Totoro photo op at entrance — 20 min if the kids love Totoro or Spirited Away. Right on Ichinenzaka (steps from Ninenzaka): <b>Kanamitsuji</b> (362 Masuya-cho, Higashiyama-ku) — traditional Kyoto kyo-kanaami hand-woven metal wire craft dating back 1,000 years; hand-wired tea strainers, Japanese open-flame grills for vegetables, beautifully functional tools made one by one. One of the most uniquely Kyoto things you can buy anywhere. 15 min. Graze food stalls as you walk: pickled cucumber on a stick, matcha soft serve, yatsuhashi samples (¥1,000–2,000). Most shops here are cash-preferred — bring ¥15,000–20,000 cash for the full afternoon.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">3:20–3:40</span>
+          <span class="item">
+            Yasaka Pagoda area — <b>Uragu Hatch</b>
+            <div class="note">Small design stationery shop on Yasaka-dori near the Pagoda — original notebooks, postcards, message cards. Very considered, not generic. 15–20 min.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">3:40–4:30</span>
+          <span class="item">
+            Hanamikoji → Gion backstreets
+            <div class="note"><b>Taiga Takahashi</b> (570-120 Gionmachi Minamigawa, Hanamikoji) — refined Japanese menswear/workwear, 20–30 min. <b>Miyawaki Baisen-an</b> (just off Shijo, Gion) — fan shop since 1823, lacquered/scented/painted fans in a beautiful old building, 10 min browse. <b>Shinmonzen / Furumonzen streets</b> (east off Nawate-dori) if anyone wants antiques or serious craft — Gion's best dealers, good 15-min wander. Hanamikoji: ochaya teahouse facades, stone-paved lanes, one of Kyoto's most photogenic streets.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">4:30–5:30</span>
+          <span class="item">
+            Nishiki area → <b>Hayakawa Hamonoten</b> + <b>Kawataki</b> + <b>Mumokuteki</b>
+            <div class="note">Taxi from Gion — show driver: <b>京都市下京区堺町通東前町399-12 早川刃物店</b> (Hayakawa Hamonoten, 399-12 Higashimaecho, Sakaimachi-dori, Shimogyo-ku) — or say <b>"Nishiki Market, Sakaimachi-dori, onegaishimasu."</b> ~¥1,500–2,000, 15 min. Then walk 5 min south of Nishiki to <b>Hayakawa Hamonoten</b> — a tiny, 120-year-old family knife shop that regulars say beats every tourist-facing knife shop in Kyoto. Not manufacturers — sharpeners. They ask you detailed questions about how you cook, what you want, how much maintenance you'll put in, then guide you to the right blade. Free engraving on every knife. <b>Cash only.</b> Knives from ~¥5,000–40,000 depending on type; much cheaper than Aritsugu for comparable quality. Open 9am–6pm. Allow 30–45 min. Also worth noting for Apr 11: Kama-Asa on Kappabashi is another serious option — decide after browsing here. <b>Kawataki kitchen shop</b> (505 Masuyacho, Fuyacho-dori) — just off Nishiki, local craftsman bowls, graters, small utensils, 15 min. <b>Mumokuteki Goods &amp; Wears</b> (261 Shikibucho, Teramachi-dori) — sustainable clothing and home goods, multiple floors, 20 min.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">5:30–6:15</span>
+          <span class="item">
+            <b>SouSou</b> cluster → <b>Kohchosai Kosuga</b> + <b>Wakabaya</b>
+            <div class="note"><b>SouSou</b> (Nakanocho, Shinkyogoku-dori, just north of Shijo) — 8–9 stores clustered together, each a different product line: tabi shoes/socks, bags, menswear, womenswear, kids' (Warabegi), tenugui fabric, gifts, tea house. Tax-free over ¥5,000. Allow 30–40 min to hit the ones that interest you — tabi socks and tenugui towels are the most giftable. Short walk to <b>Kohchosai Kosuga</b> (74 Nakajimacho, Sanjo-dori Kawaramachi Higashi-iru, 1F Royal Park Hotel) — bamboo craft house since 1898; baskets, tea whisks, kitchen utensils, chopsticks, contemporary home accessories. 20 min. Nearby: <b>Wakabaya</b> (53 Shioyacho, Nakagyo) — highly curated ceramics boutique, 5–7 Kyoto artisans, pitchers, bowls, cups in colorful and earthy glazes. 15 min.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">6:15–6:45</span>
+          <span class="item">Kawaramachi Station → train to Namba <span style="color:var(--muted);font-size:12px">(cut any stop short if energy runs low — the train runs all evening)</span></span>
+        </li>
+
+        <li>
+          <span class="time">~7:30–8:30</span>
+          <span class="item">
+            <b>Dinner — pick one based on energy:</b>
+            <div class="note">
+              <b>Option A · Hanamaruken Namba Hozenji (花丸軒)</b> — ramen · Hozenji Yokocho · <b>best atmosphere pick</b><br>
+              Tiny ramen spot just off the stone-paved Hozenji Yokocho alley, next to the moss-covered Fudo Myoo shrine. Rich chicken paitan broth with slow-cooked pork ribs — one of the most beloved bowls in Namba. Cosy, fast, deeply satisfying after a long day on your feet. The location at night is genuinely beautiful. Open until ~5am. Walk-in. ~¥1,000–1,500pp.<br><br>
+
+              <b>Option B · Ichiran Dotonbori</b> — solo-booth tonkotsu ramen · Dotonbori · <b>lowest friction pick</b><br>
+              Each person gets their own curtained booth and customises their broth (richness, spice, noodle firmness). Fast, satisfying, no decisions to make as a group. Open 24hrs. The Dotonbori branch queues can run long — if there's a wait, the Sennichimae branch is a 5-min walk and usually quieter. ~¥1,000–1,500pp.<br><br>
+
+              <b>Option C · Daiki Suisan Dotonbori (大起水産)</b> — kaiten sushi · Dotonbori canal strip · <b>lighter option</b><br>
+              Conveyor belt sushi right on the canal, fast and easy. Good if lunch was filling and you want something lighter. Solid tuna, lively atmosphere, great for the kids. Walk-in. ~¥1,500–2,500pp.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">~8:30–9:15</span>
+          <span class="item">
+            <b>Dotonbori canal walk</b>
+            <div class="note">Stroll the canal after dinner — Glico Running Man photo, Kinryu Ramen's giant green dragon, neon reflections on the water. Let your son loose on the arcade machines. The energy at night here is unlike anywhere else in Japan — take it in slowly rather than rushing through it.</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">~9:15–9:45</span>
+          <span class="item">
+            <b>🍰 Dessert hall — department store basement</b>
+            <div class="note">
+              Head to the depachika (デパ地下) basement floor of <b>Takashimaya Namba</b> (5-1-5 Namba, open until 10pm) or <b>Daimaru Shinsaibashi</b> (1-7-1 Shinsaibashisuji, open until 9:30pm) — both a short walk from Dotonbori. The dessert and sweets floor is the highlight: Japanese patisseries, wagashi confections, premium fruit tarts, and grab-and-go items. Good picks: <b>Rikuro's Cheesecake</b> (freshly baked cotton cheesecake, buy a whole cake to share back at the hotel) · <b>Pablo Cheese Tart</b> · <b>Gram Pancakes</b> · local wagashi shops. Budget ¥500–2,000pp depending on what you grab. Rikuro's is particularly worth it — the bell rings every time a fresh cake comes out of the oven.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">~10:00</span>
+          <span class="item">Walk back to Caption by Hyatt Namba (~10 min)</span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove" rel="noopener" target="_blank">Arashiyama</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tenryu-ji+Temple" rel="noopener" target="_blank">Tenryu-ji</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Okochi+Sanso+Villa" rel="noopener" target="_blank">Okochi Sanso</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera" rel="noopener" target="_blank">Kiyomizu-dera</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tsujiri%20Gion%20Kyoto" rel="noopener" target="_blank">Tsujiri</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kasagiya%20Kyoto%20Ninenzaka" rel="noopener" target="_blank">Kasagiya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gion%20Tokuya%20Kyoto" rel="noopener" target="_blank">Gion Tokuya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Asahido+ceramics+Sannenzaka+Kyoto" rel="noopener" target="_blank">Asahido</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Yojiya+Kiyomizu+Sannenzaka+Kyoto" rel="noopener" target="_blank">Yojiya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Dotori+Republic+Ghibli+Ninenzaka+Kyoto" rel="noopener" target="_blank">Dotori Republic</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kanaamitsuji+Ichinenzaka+Kyoto" rel="noopener" target="_blank">Kanamitsuji</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Uragu+Hatch+Yasaka+Kyoto" rel="noopener" target="_blank">Uragu Hatch</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Taiga+Takahashi+Gion+Kyoto" rel="noopener" target="_blank">Taiga Takahashi</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Miyawaki+Baisen-an+Kyoto" rel="noopener" target="_blank">Miyawaki Baisen-an</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hayakawa+Hamonoten+Kyoto+Shimogyo" rel="noopener" target="_blank">Hayakawa Knives</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kawataki+kitchen+shop+Kyoto+Fuyacho" rel="noopener" target="_blank">Kawataki</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mumokuteki+goods+wears+Teramachi+Kyoto" rel="noopener" target="_blank">Mumokuteki</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=SouSou+Kyoto+Nakanocho+Shinkyogoku" rel="noopener" target="_blank">SouSou</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kohchosai+Kosuga+Sanjo+Kyoto" rel="noopener" target="_blank">Kohchosai Kosuga</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Wakabaya+ceramics+Kyoto+Nakagyo" rel="noopener" target="_blank">Wakabaya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hanamaruken+Namba+Hozenji+Osaka" rel="noopener" target="_blank">Hanamaruken</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ichiran+Ramen+Dotonbori+Osaka" rel="noopener" target="_blank">Ichiran</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Daiki+Suisan+Dotonbori+Osaka" rel="noopener" target="_blank">Daiki Suisan</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" rel="noopener" target="_blank">Dotonbori</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Takashimaya+Namba+Osaka" rel="noopener" target="_blank">Takashimaya Namba</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rikuro+Ojisan+Cheesecake+Namba+Osaka" rel="noopener" target="_blank">Rikuro's Cheesecake</a>
+      </div>
+    </section>
+
+    <!-- APR 7 -->
+    <section class="card" id="apr7">
+      <div class="day">
+        <h2>Apr 7 (Tue) — Kuromon → Namba Wander → Wagyu Idaten → Shinkansen</h2>
+        <span class="pill pill-osaka">Osaka → Disney</span>
+      </div>
+      <ul class="sched">
+        <li>
+          <span class="time">9:00–10:00</span>
+          <span class="item">
+            <b>Kuromon Ichiba Market</b> — morning graze
+            <div class="note">Osaka's Kitchen · opens 9am. Work the stalls from east to west: fresh uni on rice, wagyu skewers, tamagoyaki, giant strawberries on sticks. Don't fill up — Wagyu Idaten is in two hours. Budget ¥500–1,500pp for grazing.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">10:00–10:30</span>
+          <span class="item">
+            <b>Don Quijote Namba</b> — souvenir sweep
+            <div class="note">The flagship Namba Donki (open 24hrs, 7 floors) is the best stocked in Osaka — snacks, beauty goods, novelty items, toys. Last chance for bulk snack shopping before the train. Your son will find something on every floor.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">10:30–11:00</span>
+          <span class="item">
+            <b>Namba wander</b> — Namba Yasaka Shrine + Hozenji Yokocho + Namba Parks
+            <div class="note">Start at <b>Namba Yasaka Shrine</b> — the giant lion head stage (Ema-den) is one of Osaka's most striking photo spots and almost nobody is here at 10:30am on a weekday. Stand directly in front for the full-face shot, or go wide to get the whole structure. The shrine is small but genuinely impressive in person. From there, <b>Hozenji Yokocho</b> is a 5-min walk — narrow stone-paved laneway, moss-covered Fudo Myoo shrine, atmospheric and quiet before the lunch rush. Then cut through <b>Namba Parks</b> on your way to Idaten — the rooftop garden is worth a quick detour if you have time.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:00–11:15</span>
+          <span class="item">
+            Walk to <b>Wagyu Idaten</b> — queue for lunch opening
+            <div class="note">嘉光ビル 2F, 1-8-20 Namba, Chuo Ward · 3-min walk from Namba Station · look for the samurai armor at the entrance. <b>Lunch opens 11:30am, last order 2:00pm.</b> Arrive by 11:00–11:15 to get a QR ticket and guarantee first seating. Perfect last meal in Osaka.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:30–12:30</span>
+          <span class="item">
+            <b>🥩 Wagyu Idaten lunch</b>
+            <div class="note"><b>What to order:</b> Osaka Tataki-jyu (A5 Uchihira thigh tataki over rice, ~¥3,645) · Wagyu meat sushi / Tamate Box (~¥2,640) · Sukiyaki-jyu (Kobe beef slices + tofu in special broth, ~¥3,500) · Yukhoe (raw wagyu with egg yolk). Counter seats give the best view of the chef. English menu available. Dishes arrive in under 10 min.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">12:30–1:30</span>
+          <span class="item">
+            Pack · depachika treats at <b>Takashimaya Namba</b> or <b>Daimaru Shinsaibashi</b> · leave hotel by 14:00
+            <div class="note"><b>Takashimaya Namba</b> (5-1-5 Namba, 5-min walk from hotel) — basement B1 food hall closes ~8pm. <b>Daimaru Shinsaibashi</b> (1-7-1 Shinsaibashisuji, 10-min walk) — basement B1 closes ~8:30pm. Both open well before you need to leave. Good picks: Rikuro's cotton cheesecake · local wagashi · packaged Osaka confections for gifts. Cash or credit card both fine.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">~2:00</span>
+          <span class="item">
+            Head to Shin‑Osaka Station — Midosuji Line north from Namba (~24 min, ¥290, tap Suica)
+            <div class="note">From Caption by Hyatt Namba: walk ~5 min to <b>Namba Station</b> (Osaka Metro Midosuji Line — red line, underground). Take the Midosuji Line <b>northbound toward Shin-Osaka</b> — it's a direct line, no transfers. Exit at <b>Shin-Osaka Station</b> (~24 min, 9 stops). Follow signs for <b>JR Shinkansen</b> transfers (the Shinkansen platforms are separate from the metro — allow 10 min to walk between them and buy any platform tickets needed). Arrive by 2:45 to be comfortable for the 15:00 Nozomi.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">15:00</span>
+          <span class="item">Nozomi → Tokyo (arr. 17:27)
+            <div class="note">From Tokyo Station: take the <b>Keiyo Line</b> (JR, red line — follow signs from the Shinkansen platforms, it's a bit of a walk) → <b>Maihama Station</b>, ~25 min, ¥220, tap Suica. Exit at Maihama → Disney Resort Line monorail (or 5-min walk) to Tokyo Disneyland Hotel entrance. Allow ~45 min total from stepping off the Nozomi to reaching the hotel lobby.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kuromon+Ichiba+Market+Osaka" rel="noopener" target="_blank">Kuromon Market</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Don+Quijote+Namba+Osaka" rel="noopener" target="_blank">Don Quijote Namba</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Namba+Yasaka+Shrine+Osaka" rel="noopener" target="_blank">Namba Yasaka Shrine</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hozenji+Yokocho+Osaka" rel="noopener" target="_blank">Hozenji Yokocho</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Namba+Parks+Osaka" rel="noopener" target="_blank">Namba Parks</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Wagyu+Idaten+Namba+Osaka" rel="noopener" target="_blank">Wagyu Idaten</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Takashimaya+Namba+Osaka" rel="noopener" target="_blank">Takashimaya Namba</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Daimaru+Shinsaibashi+Osaka" rel="noopener" target="_blank">Daimaru Shinsaibashi</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Namba+Station+Osaka+Metro+Midosuji" rel="noopener" target="_blank">Namba Station (Metro)</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Shin-Osaka+Station" rel="noopener" target="_blank">Shin-Osaka</a>
+      </div>
+    </section>
+
+  </div><!-- /grid -->
+
+  <!-- ─── DISNEY ─── -->
+  <div class="section-header">Disney</div>
+  <div class="grid">
+
+    <!-- APR 8 -->
+    <section class="card" id="apr8">
+      <div class="day">
+        <h2>Apr 8 (Wed) — Tokyo Disneyland</h2>
+        <span class="pill pill-disney">Disney</span>
+      </div>
+      <div class="meta">Happy Entry · 3 Use-Anytime passes (Beauty &amp; the Beast + 2) · Park 9:00am–9:00pm · Strategy: Fantasyland first → sweep clockwise through Toontown → Westernland/Critter Country → Adventureland</div>
+      <ul class="sched">
+        <li>
+          <span class="time">~8:45</span>
+          <span class="item">
+            <b>Happy Entry — gates open</b>
+            <div class="note">Exact time printed on pass. Enter World Bazaar and walk straight through — do not stop. Head directly to <b>Fantasyland at the back of the park</b>. The castle will be in front of you; go left into Fantasyland. This is where all your morning targets live. Book your first Lightning Lane the moment you're through the gate. <b>Also at 9:00am sharp:</b> check the Tokyo Disney Resort app for <b>Blue Bayou Restaurant Priority Seating</b> (dinner, Adventureland) — same-day bookings open at 9am and go fast. Grab a slot for ~6pm if available; if not, you can try walk-up standby when you're in Adventureland at 4:30pm.</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">8:45–11:00</span>
+          <span class="item">
+            <b>🏰 Fantasyland — hit everything here first</b>
+            <div class="note">
+              Ride in this order to minimise walking back and forth:<br>
+              <b>1. Haunted Mansion</b> — enter Fantasyland, turn left, this is first. Standby early is short.<br>
+              <b>2. Pooh's Hunny Hunt</b> — uniquely Tokyo, no equivalent anywhere in the world. Priority. Right next to Haunted Mansion. Book LL immediately if wait is 45+ min.<br>
+              <b>3. Small World</b> — gentle, right in the heart of Fantasyland. Short waits all day, do it now while passing through.<br>
+              <b>4. Peter Pan's Flight</b> — fan favourite, waits build fast. Hit it before 10am if you can.<br>
+              <b>5. Snow White's Adventures</b> — quick ride, clustered with the above.<br>
+              <b>6. Pinocchio's Daring Journey</b> — same cluster, knock it out back-to-back.<br>
+              <b>7. Dumbo the Flying Elephant</b> — open-air spinner on the Fantasyland/Toontown border. Short wait, fun for the kids.<br>
+              Rule: if standby &lt;45 min → ride standby, save Use-Anytime passes for Beauty and the afternoon.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">11:00</span>
+          <span class="item">
+            <b>🎡 Beauty and the Beast — Use-Anytime Pass #1</b>
+            <div class="note">The flagship Tokyo-exclusive ride — nothing like it at any other Disney park. Use your pass here at 11am when standby lines are building. Enchanted Tale of Beauty and the Beast is in the back-left of Fantasyland, close to where you already are. Perfect timing — you're finishing the Fantasyland cluster and this caps the morning.</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">11:30–12:30</span>
+          <span class="item">
+            <b>🏙️ Toontown — Monsters Inc. + Baymax</b>
+            <div class="note">Exit Fantasyland into Toontown (adjacent, top-right of park):<br>
+              <b>Monsters, Inc. Ride &amp; Go Seek</b> — laser tag-style, kids love it.<br>
+              <b>The Happy Ride with Baymax</b> — Toontown's headline attraction. Grab the Baymax-themed treat here if you see it.<br>
+              Toontown is also good for character photos if there's no queue.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">~12:30–1:00</span>
+          <span class="item">
+            Snack break + walk toward Westernland
+            <div class="note">Seasonal churro or Mickey waffle. One shared popcorn. Walk from Toontown back through the hub toward Westernland — the train station is near here if anyone wants to do the <b>Disneyland Railroad</b> loop (circles the whole park, ~15 min, great rest).</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">1:30–2:30</span>
+          <span class="item">
+            <b>🍽️ Queen of Hearts Banquet Hall</b> — Fantasyland · midday anchor ✅ RESERVED
+            <div class="note">Alice-themed restaurant — AC + recovery + sit-down meal. Split several dishes, don't over-order. After lunch: Alice's Tea Party + Wonderland photos nearby. Do the family "best ride / best snack / best moment so far" vote at the table.</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">2:30–4:30</span>
+          <span class="item">
+            <b>🤠 Westernland + Critter Country — Big Thunder + Splash + Country Bears</b>
+            <div class="note">
+              Cross to the left side of the park — Westernland is adjacent to Fantasyland on the west.<br>
+              <b>Country Bear Jamboree</b> — classic audio-animatronic show, 15 min, great midday sit-down rest.<br>
+              <b>Big Thunder Mountain</b> — Use-Anytime Pass #2 if lines are long (they will be at 3pm). Afternoon is the right time.<br>
+              <b>Splash Mountain (Critter Country)</b> — Use-Anytime Pass #3. Critter Country is just above Westernland. This is the afternoon thrill pair — save both passes for this window.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">4:30–6:30</span>
+          <span class="item">
+            <b>🌴 Adventureland — Pirates + Jungle Cruise</b>
+            <div class="note">
+              Walk south from Westernland directly into Adventureland — they share a border.<br>
+              <b>Pirates of the Caribbean</b> — classic indoor boat ride, short waits in the afternoon.<br>
+              <b>Jungle Cruise</b> — outdoor boat ride, the guide's terrible puns are half the experience. Waits ease off after 4pm.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">6:30+</span>
+          <span class="item">
+            <b>🚂 Disneyland Railroad + evening Fantasyland</b>
+            <div class="note">If you haven't done the Railroad loop yet, hop on in Adventureland or Westernland for a full circuit — great way to see the whole park as the sun goes down and rest tired legs. Return to Fantasyland for atmosphere rides + night castle shots. Beauty and the Beast at night is especially stunning from outside.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland" rel="noopener" target="_blank">Tokyo Disneyland</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Haunted+Mansion+Tokyo+Disneyland" rel="noopener" target="_blank">Haunted Mansion</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pooh+Hunny+Hunt+Tokyo+Disneyland" rel="noopener" target="_blank">Pooh's Hunny Hunt</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Enchanted+Tale+Beauty+Beast+Tokyo+Disneyland" rel="noopener" target="_blank">Beauty &amp; the Beast</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Queen+of+Hearts+Banquet+Hall+Tokyo+Disneyland" rel="noopener" target="_blank">Queen of Hearts</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Big+Thunder+Mountain+Tokyo+Disneyland" rel="noopener" target="_blank">Big Thunder</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Splash+Mountain+Tokyo+Disneyland" rel="noopener" target="_blank">Splash Mountain</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pirates+of+the+Caribbean+Tokyo+Disneyland" rel="noopener" target="_blank">Pirates</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Jungle+Cruise+Tokyo+Disneyland" rel="noopener" target="_blank">Jungle Cruise</a>
+      </div>
+    </section>
+
+    <!-- APR 9 -->
+    <section class="card" id="apr9">
+      <div class="day">
+        <h2>Apr 9 (Thu) — Tokyo DisneySea</h2>
+        <span class="pill pill-disney">Disney</span>
+      </div>
+      <div class="meta">Happy Entry · LL stacking plan · Frozen 10:00 ✅ + Peter Pan 11:00 ✅ · Dinner: Ristorante di Canaletto 7:00pm · Golden rule: every time you tap into a LL, immediately book the next one.</div>
+      <ul class="sched">
+
+        <li>
+          <span class="time">~8:45</span>
+          <span class="item">
+            <b>Happy Entry — Mediterranean Harbor gates</b>
+            <div class="note">Exact time on pass. Enter through Mediterranean Harbor (the main entry plaza with the steamship). The moment you scan in: <b>book LL for Soaring: Fantastic Flight</b> immediately — it's the top priority LL and books out fast. Then walk quickly toward Mysterious Island (volcano area, center of the park).</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">8:45–9:45</span>
+          <span class="item">
+            <b>🌋 Mysterious Island + Lost River Delta — Phase 1 power moves</b>
+            <div class="note">
+              <b>1. Journey to the Center of the Earth</b> (Mysterious Island, standby) — the signature DisneySea thrill. Volcanic mine cart ride that launches into darkness. Do this first — standby is shortest at opening.<br>
+              <b>2. Indiana Jones Adventure</b> (Lost River Delta, standby) — 5-min walk from Mysterious Island, adjacent area. Hit it immediately after Journey while crowds are still building.<br>
+              If you finish early and standby is &lt;45 min on anything nearby, consider 20,000 Leagues — but don't drift far from Mysterious Island before 10am.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">9:45–10:00</span>
+          <span class="item">
+            Walk to Fantasy Springs
+            <div class="note">Fantasy Springs is the far right of the park from Mysterious Island — allow 10 min. Head there now to be in position for the 10am Frozen LL window. Book your next LL (Tower of Terror or Toy Story Mania) while walking.</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">10:00</span>
+          <span class="item">
+            <b>❄️ Frozen (Fantasy Springs) — LL</b> ✅ RESERVED 10:00
+            <div class="note">Arendelle-themed boat ride through the Frozen world. One of the most in-demand attractions in the park. Scan in, enjoy — and the moment you're through the gate: <b>book your next LL immediately</b> (Tower of Terror if not yet booked).</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">~10:30</span>
+          <span class="item">
+            <b>🏰 Rapunzel's Lantern Festival (Fantasy Springs)</b>
+            <div class="note">Between Frozen and Peter Pan — you're already in Fantasy Springs. Rapunzel's ride is right here. Standby or LL depending on wait. Short enough to slot between the two reservations without rushing.</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">11:00</span>
+          <span class="item">
+            <b>⚓ Peter Pan's Never Land Adventure (Fantasy Springs) — LL</b> ✅ RESERVED 11:00
+            <div class="note">Fantasy Springs Peter Pan — a completely different and more immersive version than the Disneyland classic. The moment you scan in: <b>book your next LL</b> (Toy Story Mania if not yet done, or check Soaring return time). After riding — you've now cleared all of Fantasy Springs.</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">11:30–1:00</span>
+          <span class="item">
+            <b>🌊 Arabian Coast + Mermaid Lagoon — recharge loop</b>
+            <div class="note">
+              Walk back west from Fantasy Springs through Arabian Coast and Mermaid Lagoon — beautiful themeing, great photos, and easier rides that let you rest between thrills.<br>
+              <b>Sindbad's Storybook Voyage</b> (Arabian Coast) — slow boat ride, stunning visuals, one of the park's most beloved hidden gems. AC + seated, perfect midday rest.<br>
+              <b>20,000 Leagues Under the Sea</b> (Mysterious Island, nearby) — submarine dark ride, uniquely Tokyo. Fun for the kids. If standby is reasonable, do it here.<br>
+              <b>Mermaid Lagoon indoor zone</b> — good AC escape if the family needs a sit-down break. Flounder's Flying Fish Coaster is a fun quick kids ride.<br>
+              This is also your prime <b>snack run window</b> — Arabian Coast food stalls are excellent. Gyoza Dog if you haven't eaten properly, Little Green Alien Mochi, seasonal churro.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">~1:00</span>
+          <span class="item">
+            Light lunch — share, hydrate, protect the 7pm appetite
+            <div class="note">Keep it light. The cheat sheet snack sequence: ~12:30 savory bite, ~3:30 cold reset (Sea Salt Ice Cream Monaka), ~4:30 mochi — then coast to Canaletto. Refresh LL availability around 1pm — cancellations can unlock earlier return windows for Soaring or Tower.</div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">1:30–3:00</span>
+          <span class="item">
+            <b>⚡ American Waterfront + Port Discovery — secure the big LLs</b>
+            <div class="note">
+              <b>Aquatopia</b> (Port Discovery) — spinning water ride, great fun, and it's right here between Port Discovery and American Waterfront. Standby usually fine mid-afternoon.<br>
+              <b>Electric Railway</b> — runs between American Waterfront and Port Discovery, beautiful views of the harbor. Use it as a relaxed transit ride to move between areas rather than walking.<br>
+              Soaring is locked at 3pm ✅ — focus remaining LL slots on <b>Tower of Terror</b> and <b>Toy Story Mania</b> for the afternoon run. Goal: have both booked and returning around 3:30–5pm.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">3:00–5:30</span>
+          <span class="item">
+            <b>🎢 Afternoon LL run — execute the stack</b>
+            <div class="note">
+              <b>3:00 — Soaring: Fantastic Flight</b> ✅ RESERVED — smooth hang-glider flight over world landmarks with scent effects. One of the park's most magical experiences. Port Discovery area.<br>
+              <b>Tower of Terror</b> (American Waterfront) — drop tower inside a haunted hotel. Tokyo version has a unique storyline. Use LL, 3:30–4:30pm window.<br>
+              <b>Toy Story Mania!</b> (American Waterfront) — shooting game, hugely competitive in the family. Perfect afternoon energy when legs are tired but competitive spirits are high. LL, 4:00–5:00pm window.<br>
+              <b>5:30 hard stop</b> on major thrills — transition to sunset mode.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">5:30–6:45</span>
+          <span class="item">
+            <b>🏰 Fortress Explorations + Mediterranean Harbor sunset lap</b>
+            <div class="note">
+              <b>Fortress Explorations</b> — interactive walkthrough attraction in Mediterranean Harbor, the Renaissance-era fortress at the entrance. Fascinating self-guided exploration with hidden rooms, telescopes, and puzzles. More of a wander than a ride — perfect low-energy evening activity.<br>
+              Slow lap around the harbor: photos of the steamship SS Columbia, the harbor lights coming on, the castle reflection. This is the most photogenic 30 min of the whole park.<br>
+              Bathroom + water + regroup. Arrive at Canaletto by 6:45.
+            </div>
+          </span>
+        </li>
+
+        <li>
+          <span class="time">7:00</span>
+          <span class="item">
+            <b>🍽️ Ristorante di Canaletto</b> — Mediterranean Harbor ✅ RESERVED 19:00
+            <div class="note">Italian fine dining overlooking the Mediterranean Harbor — one of the best table service restaurants in either Disney park. Window tables look directly onto the harbor. At dinner: each person names their top 2 highlights of the day — core memory tradition from the cheat sheet.</div>
+          </span>
+        </li>
+
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tokyo+DisneySea" rel="noopener" target="_blank">Tokyo DisneySea</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Journey+Center+Earth+Tokyo+DisneySea" rel="noopener" target="_blank">Journey to the Center</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Indiana+Jones+Adventure+Tokyo+DisneySea" rel="noopener" target="_blank">Indiana Jones</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Frozen+Fantasy+Springs+Tokyo+DisneySea" rel="noopener" target="_blank">Frozen</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Peter+Pan+Fantasy+Springs+Tokyo+DisneySea" rel="noopener" target="_blank">Peter Pan</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Soaring+Fantastic+Flight+Tokyo+DisneySea" rel="noopener" target="_blank">Soaring</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tower+of+Terror+Tokyo+DisneySea" rel="noopener" target="_blank">Tower of Terror</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Toy+Story+Mania+Tokyo+DisneySea" rel="noopener" target="_blank">Toy Story Mania</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ristorante+di+Canaletto+Tokyo+DisneySea" rel="noopener" target="_blank">Ristorante Canaletto</a>
+      </div>
+    </section>
+
+  </div><!-- /grid -->
+
+  <!-- ─── TOKYO FINALE ─── -->
+  <div class="section-header">Tokyo Finale</div>
+  <div class="grid">
+
+    <!-- APR 10 -->
+    <section class="card" id="apr10">
+      <div class="day">
+        <h2>Apr 10 (Fri) — Nezu → Harajuku Denim → Cat Street → Shibuya → Nakameguro</h2>
+        <span class="pill pill-tokyo">Tokyo</span>
+      </div>
+      <div class="meta">Japan Edition core + modular skippable inserts. Son of Cheese &amp; FFFFFT are <em>shops</em>, not restaurants.</div>
+      <ul class="sched">
+        <li>
+          <span class="time">9:30</span>
+          <span class="item">Checkout Disney Hotel · taxi to Grand Hyatt Roppongi (~24 min, ¥5,000–7,000) · drop bags if room not ready
+            <div class="note">Ask the Disney Hotel concierge to call a taxi — they'll have one at the door. Show driver: <b>グランドハイアット東京</b> or say "Grand Hyatt Tokyo, Roppongi, onegaishimasu."</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">10:00</span>
+          <span class="item">Depart Grand Hyatt → Nezu Museum</span>
+        </li>
+        <li>
+          <span class="time">10:00–11:15</span>
+          <span class="item">
+            <b>Nezu Museum</b> + Garden
+            <div class="note">Serene museum + garden.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:25</span>
+          <span class="item">
+            <b>Son of Cheese</b> <span class="optional">optional</span> — shop/deli on spine to Harajuku
+          </span>
+        </li>
+        <li>
+          <span class="time">11:15–11:35</span>
+          <span class="item">
+            <b>I'm Donut?</b> — Harajuku
+            <div class="note">1-14-24 Jingumae, Shibuya (Harajuku branch) — opens 10am, right in the Cat Street corridor. Tokyo's most hyped fresh donut shop — brioche-based nama donuts that are chewy, fluffy, and unlike anything at home. Popular flavors include plain glazed, custard-filled, pistachio cream, and seasonal specials. Get there 15–20 min after Nezu so it's not a mad rush — the Harajuku location opens at 10am and lines build quickly. Budget ¥500–1,000pp. Grab a few to eat while walking. Cards accepted.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:35</span>
+          <span class="item">
+            <b>Age.3 × Q Harajuku</b> — milk bread + seasonal drinks
+            <div class="note">Jingumae 2-chome, right on the Cat Street path — 4.9★ (1,200+ reviews). Famous for their thick-cut Japanese milk bread sandwiches and matcha/seasonal lattes. Quick stop, grab something to eat while you walk. Opens 10am. Budget ¥1,000–1,500pp.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:45–12:20</span>
+          <span class="item">
+            <b>NUIR Vintage Harajuku</b> — luxury vintage bags
+            <div class="note">神宮前1-8-8 COXY188ビル1F (Jingumae 1-8-8, COXY188 Building, ground floor) — 5-min walk from Age.3, right on the Harajuku/Omotesando spine. Opens 11am daily. Brand new location (opened Nov 2025) — forest-in-the-city theme with deep green bamboo decor, photo booths, gacha machines and a drink counter, so the kids have something to do while bags get inspected. 4,000–6,000 items: Chanel, Hermès, LV, Dior, Miu Miu, Goyard, Chrome Hearts. Prices negotiable (rare in Japan). Tax-free available. Larger and more theatrical than the Shibuya location — build in 30–40 min if serious.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">12:20–1:00</span>
+          <span class="item">
+            <b>Denim Crawl — Harajuku</b>: Studio D'Artisan · Momotaro Jeans · Samurai Jeans · Iron Heart
+            <div class="note">All clustered in Ura-Harajuku / Cat Street. Studio D'Artisan and Momotaro are practically next door. Iron Heart is a short walk — Japan's most serious heavyweight selvedge brand. Budget 15–20 min per shop. No rush to buy — try on, feel the fabric, ask questions. Staff are passionate and patient.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">12:30–1:00</span>
+          <span class="item">
+            <b>Brandy Melville</b> — Harajuku
+            <div class="note">3-29-5 Jingumae, Shibuya — right in the Cat Street corridor, steps from the denim shops. 3-floor store with Tokyo-exclusive items you can't get back home, plus the usual lineup. Can get very crowded — go on a weekday (Apr 10 is a Friday) and you should be fine. Cards accepted. Budget 25–30 min. <b>Check Google Maps the week before</b> to confirm it's open — one report of a brief closure in Jan 2026, but should be fully operational by April.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">1:00–1:15</span>
+          <span class="item">
+            <b>🥤 Iyoshi Cola</b> — Cat Street, Jingumae
+            <div class="note">5-29-12 Jingumae — Japan's original craft cola, made from kola nuts, 10+ spices, and citrus using a 100-year-old herbal medicine recipe. Ordered at the counter and poured fresh in front of you into a pouch with ice, soda water, lemon, and a pinch of spice — more like a potion than a soda. Two options: the classic Dreamy Flavor (shoyu-adjacent, warm spice) or the yuzu shio version (bright and citrusy). The kids will love it. You can also pick up a bottle of the syrup to take home. Open 1:00–7:00pm. Tiny shop, just walk in. Right on your Cat Street exit path — zero detour.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">1:15–2:00</span>
+          <span class="item">
+            <b>Lunch — pick one:</b>
+            <div class="note">
+              <b>Option A · Katsudon-ya Zuicho</b> — Udagawacho, Shibuya · 3-min walk from PEANUTS Cafe · highly rated katsudon ¥1,000–2,000pp · opens 11:30am · quick and satisfying · cash only likely.<br><br>
+              <b>Option B · De Frites Staan Harajuku</b> — 神宮前4-29-9 神宮前ビルディング 1F (Jingumae 4-29-9) · Belgian steak frites with wagyu/Kobe beef options + double-fried fries · ¥1,500–3,500pp · <b>opens 1pm on Fridays</b> — go straight at 1pm · ticket queue system, wait can be 30–60 min on busy days · house-made aioli, truffle mayo, café de Paris butter · 5-min walk from the denim shops.<br><br>
+              <b>Option C · Kanazawa Maimon Sushi</b> — Shibuya PARCO 7F (same building as Nintendo TOKYO on 6F) · premium kaiten sushi from Kanazawa · twice-daily fish deliveries · iPad ordering in English · signature Nodoguro (blackthroat seaperch) + Noto squid + sweet shrimp · open kitchen, watch chefs work · ¥3,500–5,500pp · opens 11:30am · best pick if the family wants high-quality sushi over Western food — and doubles as a Nintendo TOKYO / Pokémon Center run on the same floor trip.<br><br>
+              <b>Option D · Ikura Shibuya</b> — 円山町5-3 MIEUXビル 1F · 5-min walk from Shibuya Station · wagyu hamburger steak + omurice · fluffy creamy omelette over seasoned rice, finished with a paw-print stamp · live teppan counter kitchen, watch chefs work · demi-glace, mentaiko cream, or black curry sauce · ¥2,000–3,000pp · opens 11:30am daily · walk-in only, 30–45 min wait expected · <b>cash / PayPay only</b> (no cards) · Note: not sushi — omurice and hambāgu specialist from Fukuoka.
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="time">2:00–2:20</span>
+          <span class="item">
+            <b>PEANUTS Cafe</b> — browse + shop
+            <div class="note">Snoopy-themed café and shop — Snoopy merch, stationery, character goods. Worth 15–20 min for a look around even without eating. 3-min walk from Katsudon-ya.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">2:25–3:05</span>
+          <span class="item">
+            <b>Design Festa Gallery</b>
+            <div class="note">Two-building gallery right off Cat Street where artists rent small rooms and sell directly — no middleman, no commission. Paintings, prints, illustration, ceramics, everything. Prices range from ¥1,000 to ¥50,000+. Many artists are on-site and happy to chat. Free entry, cash only for purchases. One of the best spots in Tokyo to find an original piece as a trip memento. Rotating exhibitions so what's on display will be unique to your visit.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">3:10–3:40</span>
+          <span class="item">
+            <b>Kiddy Land</b>
+            <div class="note">Multi-floor character store.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">3:30</span>
+          <span class="item">
+            <b>WORM Tokyo</b>
+            <div class="note">Sneaker resale.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">3:50</span>
+          <span class="item">
+            <b>CUNE</b>
+            <div class="note">Bold Japanese rabbit streetwear.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">4:10</span>
+          <span class="item">
+            <b>BEAMS Plus</b>
+            <div class="note">Japanese take on classic menswear.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">4:30</span>
+          <span class="item">
+            <b>FFFFFT</b> <span class="optional">optional · 10–15 min</span>
+            <div class="note">Concept shop; skippable.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">4:45</span>
+          <span class="item">
+            <b>Loft Shibuya</b> <span class="optional">optional</span>
+            <div class="note">Stationery + lifestyle mega-store.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">5:20</span>
+          <span class="item">Head to Hikiniku to Come (~10 min walk from Shibuya)</span>
+        </li>
+        <li>
+          <span class="time">5:45–7:00</span>
+          <span class="item"><b>Hikiniku to Come</b> 🥩 <span class="pill" style="background:rgba(130,212,192,.12);color:#82d4c0;font-size:0.7rem;padding:2px 7px;border-radius:20px;">RESERVED ✓</span> · Res #76EHAM
+            <div class="note">Shibuya. Burger-only menu, all Wagyu. Counter seating, minimalist, iconic.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">7:10–7:40</span>
+          <span class="item">
+            Walk/taxi to Nakameguro → <b>Traveler's Factory</b>
+            <div class="note">Traveler's Notebook flagship. ~10 min from Hikiniku on foot along the canal. Open until 8pm. Evening canal walk with cherry blossoms is spectacular — 800+ trees lit with lanterns.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">7:50–8:30</span>
+          <span class="item">
+            Taxi to Shibuya → <b>Tower Records</b>
+            <div class="note">Legendary 9-floor record store. ~10 min taxi from Nakameguro. Open until 11pm — no rush. Japanese pressings, import vinyl, live event posters. Worth the taxi ride.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:30–10:00</span>
+          <span class="item">
+            <b>Lost Bar</b> — adults only, Shibuya <span class="optional">optional · drop kids at hotel first</span>
+            <div class="note">Udagawacho 33-1, Grand Tokyo Shibuya Bldg. 2F — 5-min walk from Tower Records. Hidden entrance behind a wall of gacha machines (look for the vending machines, take the elevator to 2F). Open until 11pm. Created by Chris Broad (Abroad in Japan YouTube) and Sharla — cocktail bar with floor-to-ceiling windows overlooking Shibuya. Seasonal monthly cocktails + sake selection + cheese plate. Velvet seating, 80s tunes, lively international crowd. Walk-in only, <b>cashless</b> (cards only). A natural adults cap to the day after the kids are sorted.</div>
+          </span>
+        </li>
+      <div class="callout"><b>Note:</b> Son of Cheese and FFFFFT are shops (not restaurants). Both are optional and sit on your forward path.</div>
+      <div class="callout" style="background:rgba(126,184,247,.07);border-color:rgba(126,184,247,.2);color:#a9cff5;"><b>Arcade + gashapon splits:</b> Harajuku and Shibuya are loaded with options for dad + son while wife + daughter browse fashion and denim shops. All on your walking path:
+        <br>• <b>Takeshita Street gashapon alley</b> — multiple clusters of capsule machines right at the top of Takeshita-dori. Quick 10-min hit between shops.
+        <br>• <b>Round1 Shibuya</b> — massive arcade + bowling + sports complex near Shibuya station. Could drop in while others browse Loft.
+        <br>• <b>Sega / GiGO Shibuya</b> — crane games, purikura (photo booths), and rhythm games. Right on Center-gai, 3-min walk from the scramble crossing.
+        <br>• <b>Pokémon Center Shibuya</b> — inside Shibuya Parco (9F). Exclusive Shibuya merch. 5-min walk from Loft.
+        <br>• <b>Nintendo TOKYO</b> — same building as Pokémon Center (Shibuya Parco 6F). Japanese-exclusive merch + demo stations.</div>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Nezu+Museum" rel="noopener" target="_blank">Nezu Museum</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Studio%20D%27Artisan%20Harajuku%20Tokyo" rel="noopener" target="_blank">Studio D'Artisan</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Momotaro%20Jeans%20Harajuku%20Tokyo" rel="noopener" target="_blank">Momotaro</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Samurai%20Jeans%20Tokyo" rel="noopener" target="_blank">Samurai Jeans</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Iron%20Heart%20Tokyo" rel="noopener" target="_blank">Iron Heart</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Brandy+Melville+Harajuku+Jingumae+Tokyo" rel="noopener" target="_blank">Brandy Melville</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=I'm+Donut+Harajuku+Jingumae+Tokyo" rel="noopener" target="_blank">I'm Donut?</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Age.3+Harajuku+Jingumae+Tokyo" rel="noopener" target="_blank">Age.3 Harajuku</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=NUIR+VINTAGE+HARAJUKU+Jingumae+1-8-8" rel="noopener" target="_blank">NUIR Vintage Harajuku</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Katsudon-ya+Zuicho+Shibuya" rel="noopener" target="_blank">Katsudon-ya Zuicho</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=De+Frites+Staan+Harajuku+Jingumae" rel="noopener" target="_blank">De Frites Staan</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kanazawa+Maimon+Sushi+Shibuya+PARCO" rel="noopener" target="_blank">Kanazawa Maimon Sushi</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ikura+Shibuya+Maruyamacho" rel="noopener" target="_blank">Ikura Shibuya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Peanuts+Cafe+Harajuku" rel="noopener" target="_blank">PEANUTS Cafe</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kiddy+Land+Harajuku" rel="noopener" target="_blank">Kiddy Land</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=WORM+Tokyo" rel="noopener" target="_blank">WORM Tokyo</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=CUNE+Harajuku" rel="noopener" target="_blank">CUNE</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=BEAMS+Plus+Harajuku" rel="noopener" target="_blank">BEAMS Plus</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Design+Festa+Gallery+Harajuku" rel="noopener" target="_blank">Design Festa Gallery</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=FFFFFT+Harajuku" rel="noopener" target="_blank">FFFFFT</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Loft+Shibuya" rel="noopener" target="_blank">Loft Shibuya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Round1+Shibuya" rel="noopener" target="_blank">Round1 Shibuya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=GiGO+Shibuya" rel="noopener" target="_blank">GiGO Shibuya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Shibuya+Parco" rel="noopener" target="_blank">Pokémon Center</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Nintendo+TOKYO+Shibuya+Parco" rel="noopener" target="_blank">Nintendo TOKYO</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Travelers+Factory+Nakameguro" rel="noopener" target="_blank">Traveler's Factory</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tower+Records+Shibuya" rel="noopener" target="_blank">Tower Records</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Lost+Bar+Shibuya+Udagawacho" rel="noopener" target="_blank">Lost Bar</a>
+      </div>
+    </section>
+
+    <!-- APR 11 -->
+    <section class="card" id="apr11">
+      <div class="day">
+        <h2>Apr 11 (Sat) — Kappabashi Knives → teamLab → Mori Art Sunset → Gonpachi Finale</h2>
+        <span class="pill pill-tokyo">Tokyo</span>
+      </div>
+      <ul class="sched">
+        <li>
+          <span class="time">8:30 AM</span>
+          <span class="item">
+            Taxi from Grand Hyatt → Kappabashi (~30 min, ~¥2,500–3,500)
+            <div class="note">Show driver: <b>合羽橋道具街</b> (Kappabashi Dogukai) · or say "Kappabashi Dogukai, onegaishimasu"</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">9:00–11:30</span>
+          <span class="item">
+            <b>Kappabashi Kitchen Street</b>
+            <div class="note">Kitchenware + knife street. Tsubaya opens 9:00 AM · Kama-Asa opens 11:00 AM. Trimmed to 2.5 hrs to fit the afternoon — prioritise Tsubaya + one or two other shops.<br><br>
+            <b>🍳 Vermicular House Daikanyama</b> — note for the canal walk on Apr 11 evening (or Apr 10 if you pass through Daikanyama): Vermicular's flagship store in Daikanyama sells their acclaimed Japanese-made enameled cast iron cookware alongside a cookbook library, deli, and coffee stand. If you're buying serious cookware this trip, it pairs perfectly with Kappabashi knives. Daikanyama is a 10-min walk from Nakameguro — easy to hit on the way to or from the canal walk. <a href="https://www.google.com/maps/search/?api=1&query=Vermicular+House+Daikanyama+Tokyo" target="_blank" rel="noopener" style="color:var(--accent2)">Map →</a></div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:45–12:45</span>
+          <span class="item">
+            <b>Lunch — pick one:</b>
+            <div class="note">
+              <b>Option A · Grill Grand</b> (Asakusa) — omurice · Family-run since 1941 · Michelin Bib Gourmand · house demi-glace takes 2 weeks to make. Skip if omurice feels like a repeat after Dearbros in Osaka (Apr 5).<br><br>
+              <b>Option B · Asakusa Gyukatsu</b> (Kaminarimon, 2-chome) — 4.8★ (12,000+ reviews) · breaded wagyu beef cutlet you sear yourself on a tabletop grill · free rice + soup refills · ¥2,000–3,500pp · opens 11am · expect a short queue but it moves fast. A totally different experience from the rest of the trip's wagyu meals.<br><br>
+              <b>Option C · American Diner Andra</b> (5-13-7 Higashiueno, Taito — ~8 min walk from Kappabashi) — the smash burger dunked in a sizzling cast iron skillet of cheese fondue · ¥2,000–3,000pp · opens 11:30am · arrive at opening to avoid a wait, it's small · sit at the counter to watch your burger get dunked · Route 66 decor, American football jerseys, English-speaking staff · also does burritos, quesadillas, buffalo chicken. Best pick if the kids want a break from Japanese food.
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="time">12:45–1:20</span>
+          <span class="item">
+            Taxi Asakusa → Ginza 1-chome · drop wife at Rabbicour (~20 min)
+            <div class="note">Show driver: 銀座一丁目 · Rabbicour is at 銀座1-14-6 5F. Drop wife and take a separate cab onward to Azabudai Hills for teamLab (~15 min).</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">1:30–3:30</span>
+          <span class="item">
+            <b>Rabbicour Tokyo</b> — Head Spa 💆 <span class="pill" style="background:rgba(130,212,192,.12);color:#82d4c0;font-size:0.7rem;padding:2px 7px;border-radius:20px;">RESERVED ✓</span> <span style="font-size:0.75em;color:var(--muted)">(no res# provided — confirm with salon)</span>
+            <div class="note">2-hour treatment at the Tokyo flagship (Ginza 1-chome). Aqua/immersive theme rooms. English-friendly — English menus and counseling sheets provided. Self-service styling room after treatment.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">1:30–3:30</span>
+          <span class="item">
+            <b>teamLab Borderless</b> (Azabudai Hills) ✅ TICKETS CONFIRMED · Ticket #AALCKPNN7A4F-0001
+            <div class="note">Entry Apr 11 13:30–14:00 · <b>1 adult, 1 junior (middle/high school), 1 child</b> · ¥11,500 total · <b>includes 3× EN TEA HOUSE tea tickets</b> — use these inside for the curated tea experience (don't skip, it's part of the space). No time limit after entry, no re-entry. QR code displays from midnight on Apr 11. One QR code admits the whole group simultaneously — show at gate together. Immersive digital art — infinite mirror rooms, flowing light installations, interactive floors. Wear dark clothing. 10-min walk from Grand Hyatt or 15-min walk from Rabbicour.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">4:00–4:45</span>
+          <span class="item">
+            <b>Tolman Collection</b>
+            <div class="note">Contemporary Japanese print and painting gallery in Minato-ku, run by the Tolman family since 1972. Specialises in limited-edition woodblocks, lithographs, etchings, and original paintings by established and emerging Japanese artists. Prices range from ~¥15,000 to ¥1,500,000 — plenty of beautiful pieces in the ¥30,000–100,000 range. Allison Tolman (second generation) is incredibly knowledgeable and will walk you through the collection. They ship internationally. ~11 min taxi from Rabbicour / ~10 min walk from Grand Hyatt. A perfect place to find a meaningful painting for the trip.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">4:45</span>
+          <span class="item">
+            Regroup at Grand Hyatt · wife rejoins · freshen up
+          </span>
+        </li>
+        <li>
+          <span class="time">5:00–6:00</span>
+          <span class="item">
+            <b>Mori Art Museum + Tokyo City View</b> (52F Roppongi Hills)
+            <div class="note">Same building as your hotel. Take the elevator to the 52nd floor observation deck for 360° views — time it so you catch sunset over the city (~6:00 PM in early April). Mt Fuji visible on clear days. Current exhibition included with ¥2,000 ticket. Rooftop Sky Deck (open-air, +¥500) is spectacular if weather allows. Allow 45–60 min.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">6:30–7:45</span>
+          <span class="item">
+            Taxi to Nakameguro → <b>Cherry Blossom Canal Walk</b>
+            <div class="note">~15 min taxi from Roppongi Hills. 800+ cherry trees line both banks of the Meguro River, lit with pink lanterns at night. One of the best sakura experiences in Japan. Walk the canal east toward Nakameguro Station — about 1km, completely flat, magical on a warm April night.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">8:00–9:30</span>
+          <span class="item">
+            <b>🍽️ Gonpachi Nishi‑Azabu</b> — finale dinner ✅ RESERVED 20:00 · Res #490442
+            <div class="note">Kill Bill-inspired setting · classic Tokyo farewell. 10-min walk from Nakameguro.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">9:45–11:00</span>
+          <span class="item">
+            <b>The Juniper</b> — gin bar, Nakameguro
+            <div class="note">Japan's first dedicated gin and tonic bar. 120+ gins from around the world — Roku, Ki No Bi, The Botanist, rare bottles. G&Ts from ¥800, cocktails from ¥1,400. Try the Matcha Chai Latte with Ki No Bi gin. Right on the canal strip. Walk in — no reservation needed. Perfect last drink in Japan.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kappabashi+Kitchen+Street" rel="noopener" target="_blank">Kappabashi</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Vermicular+House+Daikanyama+Tokyo" rel="noopener" target="_blank">Vermicular House</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Grill+Grand+Asakusa" rel="noopener" target="_blank">Grill Grand</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Asakusa+Gyukatsu+Kaminarimon" rel="noopener" target="_blank">Asakusa Gyukatsu</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=American+Diner+Andra+Higashiueno+Tokyo" rel="noopener" target="_blank">American Diner Andra</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rabbicour+Tokyo+Ginza+1-chome" rel="noopener" target="_blank">Rabbicour Tokyo</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=teamLab+Borderless+Azabudai+Hills" rel="noopener" target="_blank">teamLab Borderless</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tolman+Collection+Tokyo+Minato" rel="noopener" target="_blank">Tolman Collection</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mori+Art+Museum+Roppongi+Hills" rel="noopener" target="_blank">Mori Art Museum</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gonpachi+Nishi-Azabu" rel="noopener" target="_blank">Gonpachi</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Nakameguro+River+cherry+blossoms" rel="noopener" target="_blank">Nakameguro Canal</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Juniper+gin+bar+Nakameguro+Tokyo" rel="noopener" target="_blank">The Juniper</a>
+      </div>
+    </section>
+
+  </div><!-- /grid -->
+
+  <!-- ─── DEPARTURE ─── -->
+  <div class="section-header">Departure</div>
+  <div class="grid">
+
+    <!-- APR 12 -->
+    <section class="card" id="apr12">
+      <div class="day">
+        <h2>Apr 12 (Sun) — I'm Donut → Nakano Broadway → Pack → Fly Home</h2>
+        <span class="pill pill-depart">Departure</span>
+      </div>
+      <div class="meta">Flight 17:45 Narita T2. Keep Nakano time capped at 90 min.</div>
+      <ul class="sched">
+        <li>
+          <span class="time">9:00–9:30</span>
+          <span class="item">
+            <b>I'm Donut?</b> — Nakameguro
+            <div class="note">1-22-7 Kamimeguro, Meguro-ku — 10-min taxi from Grand Hyatt. <b>Opens 9am</b>, the earliest of all Tokyo locations — ideal for a last-morning treat before the flight. Grab a handful of nama donuts to eat on the way to Nakano. <b>Cash or PayPay only</b> at this branch. Queue early — it gets busy fast and popular flavors sell out by midday.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">9:30–11:15</span>
+          <span class="item">
+            <b>Nakano Broadway</b> — 90 min focused
+            <div class="note">Anime + subculture mall. ~25 min taxi from Nakameguro.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">11:30–12:30</span>
+          <span class="item">Return to hotel · finish packing
+            <div class="note"><b>Optional last lunch:</b> <b>Iruca Tokyo</b> — 4-12-12 Roppongi, 5-min walk from Grand Hyatt. Michelin Bib Gourmand ramen · open Sun 11am–8pm · walk-in only (queue 30–50 min weekends, so go by noon). Worth it if the family isn't too full from I'm Donut. Skip if you're running tight on packing time.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time">~1:30</span>
+          <span class="item">Car service departs Grand Hyatt → Narita T2 (~75–90 min depending on traffic)
+            <div class="note">Book in advance — ask Grand Hyatt concierge to arrange, or use a service like Hinomaru Limousine or S-Class Hire. For a 17:45 flight, leaving at 1:30pm gives comfortable buffer for international check-in and security. Confirm pickup time with the service when you check in.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=I'm+Donut+Nakameguro+Tokyo" rel="noopener" target="_blank">I'm Donut? Nakameguro</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Nakano+Broadway" rel="noopener" target="_blank">Nakano Broadway</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Iruca+Tokyo+Roppongi" rel="noopener" target="_blank">Iruca Tokyo</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Narita+Airport+Terminal+2" rel="noopener" target="_blank">Narita T2</a>
+      </div>
+    </section>
+
+    <!-- FOOD PIVOT -->
+    <section class="card card-wide" id="food-pivot">
+      <div class="day">
+        <h2>Food Pivot &amp; On-Path Shops</h2>
+        <span class="pill pill-info">Backup Plans</span>
+      </div>
+      <div class="meta">If a primary plan has a long queue (&gt;20 min) or energy drops, use these map-ready fill-ins.</div>
+      <div class="pivot-grid">
+        <div class="pivot-section">
+          <h3>Restaurants (fast pivots)</h3>
+          <ul class="pivot">
+            <li><b>AFURI</b> — <span>Yuzu shio ramen, light + fast. Good Apr 4 or Apr 10.</span></li>
+            <li><b>Katsudo Ya‑Zuricho</b> — <span>Hearty tonkatsu; fits Apr 4 or Apr 7.</span></li>
+            <li><b>Gyoza Oh</b> — <span>Lightweight gyoza; Kyoto/Osaka or Asakusa pivot.</span></li>
+            <li><b>Kichi Kichi Omurice</b> — <span>Kyoto theatrical omurice (reservation advised); best Apr 6 Higashiyama.</span></li>
+            <li><b>Gaburi Chicken Shibuya</b> — <span>3-min from Shibuya Station · 8-consecutive-year Fried Chicken Grand Prix winner · karaage + honetsukidori + fruit highballs · ¥1,500–2,000pp · open late · natural Apr 10 dinner pivot if Hikiniku has a long wait or as a post-Tower Records stop.</span></li>
+            <li><b>Gaburi Chicken Akasaka</b> — <span>10-min walk from Grand Hyatt · same chain, consistently rated best karaage in Akasaka · good Apr 10/11/12 casual dinner or late-night pivot.</span></li>
+          </ul>
+          <h3>Kaiten sushi (conveyor belt)</h3>
+          <ul class="pivot">
+            <li><b>Genki Sushi Shibuya</b> — <span>Order-by-tablet, plates arrive on a miniature shinkansen track. Huge hit with kids. Budget-friendly (~¥1,500–2,500pp). Best fit: Apr 10 lunch pivot (Shibuya area) or Apr 11 quick dinner.</span></li>
+            <li><b>Sushiro Roppongi</b> — <span>Japan's biggest kaiten chain · ¥100+ plates · surprisingly excellent quality for the price. 10-min walk from Grand Hyatt. Use the Sushiro app to reserve a slot and skip the queue. Best fit: Apr 10 or 11 easy dinner pivot.</span></li>
+            <li><b>Kura Sushi Asakusa</b> — <span>Every 5 plates triggers a capsule-toy gacha game — your son won't want to leave. Near Kappabashi. Best fit: Apr 11 lunch pivot instead of Grill Grand, or a quick post-Kappabashi stop.</span></li>
+            <li><b>Daiki Suisan Dotonbori</b> — <span>Kaiten sushi right on the Dotonbori canal strip. Solid tuna, lively atmosphere. Best fit: Apr 6 evening pivot if Dotonbori dinner plan changes.</span></li>
+          </ul>
+        </div>
+        <div class="pivot-section">
+          <h3>Shops (on-path, optional)</h3>
+          <ul class="pivot">
+            <li><b>Son of Cheese</b> — <span>Shop/deli hybrid on Aoyama spine. Optional early lunch or quick browse.</span></li>
+            <li><b>FFFFFT</b> — <span>Concept shop on Cat Street orbit. 10–15 min, skippable.</span></li>
+            <li><b>WORM Tokyo</b> — <span>Sneaker resale (Harajuku).</span></li>
+            <li><b>BEAMS Plus</b> — <span>Harajuku / Cat Street. Japanese take on classic menswear.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><b>Rule:</b> Queue &gt;20 min or energy flags → pick a Restaurant pivot. Son of Cheese &amp; FFFFFT are on-path shops; enter only if energy allows.</div>
+    </section>
+
+  </div><!-- /grid -->
+
+</div><!-- /wrap -->
+
+<!-- ═══════════════ LATE NIGHT SECTION ═══════════════ -->
+<div class="wrap">
+
+  <div class="section-header" id="late-night">🌙 Late Night Options by Hotel</div>
+  <div class="meta" style="margin-bottom:14px;font-size:12px;color:var(--muted);">For after-dinner snacks, jet-lag hunger, or nights that run long. Listed by hotel stay.</div>
+  <div class="grid">
+
+    <!-- KABUTOCHO -->
+    <section class="card">
+      <div class="day">
+        <h2>Caption Kabutocho · Apr 3–5</h2>
+        <span class="pill pill-info">Nihonbashi area</span>
+      </div>
+      <div class="meta">Kabutocho is a quiet financial district — late-night options are limited but there are solid picks within a short walk or taxi ride.</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            <b>Sushizanmai Tsukiji Honten</b> — 24 hours · Tsukiji
+            <div class="note">The original, flagship Sushizanmai — open 24/7 since 2001. ~10 min taxi from Caption Kabutocho. Fresh sushi at all hours, multilingual menu, fish-market energy. Especially atmospheric at 1–3am when market workers come in.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Sushizanmai Yurakucho</b> — open until 5am · Yurakucho
+            <div class="note">Another all-hours branch, slightly closer (~8 min taxi). Good fallback if you end up near Ginza/Tokyo Station late. Same menu, same quality.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Convenience stores (7-Eleven / FamilyMart / Lawson)</b> — 24 hours · everywhere
+            <div class="note">Japan's convenience store food is genuinely excellent — onigiri, hot foods, chilled ramen, sandwiches, desserts. Multiple branches within 2-min walk. Best fallback for kids who are just hungry, not adventurous.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sushizanmai+Tsukiji+Honten" rel="noopener" target="_blank">Sushizanmai Tsukiji</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sushizanmai+Yurakucho" rel="noopener" target="_blank">Sushizanmai Yurakucho</a>
+      </div>
+    </section>
+
+    <!-- NAMBA OSAKA -->
+    <section class="card">
+      <div class="day">
+        <h2>Caption Namba Osaka · Apr 5–7</h2>
+        <span class="pill pill-info">Dotonbori / Namba</span>
+      </div>
+      <div class="meta">Best late-night hotel location of the trip — you're already in Osaka's all-night food district. Everything below is a short walk.</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            <b>Kinryu Ramen Honten (金龍ラーメン)</b> — 24 hours · Dotonbori
+            <div class="note">Iconic green dragon sign. Kansai-style pork broth ramen, fast service, standing or seated. Free toppings (kimchi, garlic). Cash only, always busy. One of Osaka's most famous all-night spots — both kids and adults love the energy here at midnight.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Sushizanmai Dotonbori</b> — open until ~5am · Dotonbori
+            <div class="note">Same reliable chain, right on the Dotonbori strip. Open until the first trains run. Multilingual menu, good for a proper late-night meal rather than ramen.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Hanamaruken Namba Hozenji (花丸軒)</b> — open until ~5am · Hozenji Yokocho
+            <div class="note">Small, atmospheric ramen spot just off Hozenji Yokocho alley. Rich chicken paitan broth. Closes around first trains. Perfect post-Dotonbori walk night cap.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Teppan Jinja</b> — open late · Dotonbori riverside
+            <div class="note">Shrine-themed teppanyaki izakaya on the Dotonbori canal. Wide menu of griddled skewers, noodles, rice dishes. Counter seating with view of the chefs. Lively well past midnight.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Gaburi Chicken Namba (がぶりチキン)</b> — 8-min walk · 4-6-6 Namba · open late
+            <div class="note">Nagoya-based karaage chain, 8 consecutive Fried Chicken Grand Prix wins. Order the momo karaage (chicken thigh) and honetsukidori (whole bone-in thigh slow-baked in oven). Six cut options, yuzu-kosho and ume dipping sauces. Fruit highballs are the signature drink. Lively izakaya energy, ¥1,500–2,000pp. Good for Apr 5 post-Dotonbori or Apr 6/7 casual dinner.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Convenience stores (Dotonbori strip)</b> — 24 hours
+            <div class="note">Multiple branches on and around Dotonbori. Grab onigiri and sit by the canal — a genuinely enjoyable Osaka experience at midnight.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kinryu+Ramen+Honten+Dotonbori+Osaka" rel="noopener" target="_blank">Kinryu Ramen</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sushizanmai+Dotonbori+Osaka" rel="noopener" target="_blank">Sushizanmai Dotonbori</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hanamaruken+Namba+Hozenji+Osaka" rel="noopener" target="_blank">Hanamaruken</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gaburi+Chicken+Namba+Osaka" rel="noopener" target="_blank">Gaburi Chicken Namba</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Teppan+Jinja+Dotonbori+Osaka" rel="noopener" target="_blank">Teppan Jinja</a>
+      </div>
+    </section>
+
+    <!-- DISNEY HOTEL -->
+    <section class="card">
+      <div class="day">
+        <h2>Tokyo Disneyland Hotel · Apr 7–10</h2>
+        <span class="pill pill-info">Maihama Resort</span>
+      </div>
+      <div class="meta">Most restrictive location — you're on the resort. Limited options, but covered for late hunger.</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            <b>Grand Château (Tokyo Disneyland Hotel)</b> — open until midnight
+            <div class="note">The hotel's main restaurant stays open until midnight. French-influenced menu, pricey but convenient if the kids are still buzzing after a park day. No need to leave the hotel.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>In-room dining</b> — available late
+            <div class="note">Tokyo Disneyland Hotel offers room service at reasonable hours. Good for tired kids who just want something quick without venturing out.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Resort convenience stores (Bon Voyage shop area)</b> — late hours
+            <div class="note">The resort's shopping area near the entrance has a convenience store with snacks and drinks. Best fallback for post-park hunger without a full meal.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>イクスピアリ (Ikspiari mall)</b> — restaurants until 11pm
+            <div class="note">Adjacent shopping mall to the resort. Several restaurants, including casual Japanese options. ~5-min walk from the hotel. Check closing times — most restaurants close by 10–11pm, but it beats paying resort prices.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ikspiari+Maihama+Tokyo" rel="noopener" target="_blank">Ikspiari Mall</a>
+      </div>
+    </section>
+
+    <!-- GRAND HYATT ROPPONGI -->
+    <section class="card">
+      <div class="day">
+        <h2>Grand Hyatt Roppongi · Apr 10–12</h2>
+        <span class="pill pill-info">Roppongi Hills</span>
+      </div>
+      <div class="meta">Best late-night location in Tokyo — you're in Roppongi, which runs until dawn. Several options are literally next door.</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            <b>Chinese Café 8 (チャイニーズカフェ 8)</b> — 24 hours · next to Grand Hyatt
+            <div class="note">Literally adjacent to the Grand Hyatt. Peking duck roasted whole in an iron pot, carved tableside — then bones become soup and a stir-fry (one duck, three ways). 300+ item menu. Popular with locals and expats at 1–2am. English menu. Best late-night meal of the entire trip if you're hungry at midnight.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Sushizanmai Takumi Roppongi</b> — 24 hours · Roppongi Station
+            <div class="note">24-hour sushi right near Roppongi Station, ~5 min walk. Counter seats, table seats, private rooms. Nigiri, sashimi, seasonal specials. Reliable quality for the chain, convenient for any-hour hunger.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Fuuki Noodle Factory (風来居)</b> — open until 6am · Roppongi
+            <div class="note">50+ years of ramen expertise. Signature tsukemen (dipping ramen) with whole-grain noodles in bonito broth. Open until 6am most nights. Perfect for a late-night bowl after Gonpachi on Apr 11 or a post-walk craving on Apr 10.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Roppongi Tsunagu (六本木 つなぐ)</b> — until 5:30am weekdays / 8am weekends
+            <div class="note">Gourmet seafood ramen — standout is the double shellfish broth with fresh Hokkaido clams. Also a creative cheese tsukemen. Open until 5:30am on weeknights and 8am on weekends. Weekend hours make it a genuine breakfast option after a late night.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Gaburi Chicken Akasaka (がぶりチキン)</b> — ~10 min walk · 3-min from Akasaka-mitsuke · open late
+            <div class="note">The standout Tokyo branch — reviewers consistently call it the best karaage in Akasaka. Momo karaage (chicken thigh) + honetsukidori (whole bone-in thigh, oven-baked) + signature fruit highballs. Six cut options, yuzu-kosho and ume sauces. Lively izakaya, ¥1,500–2,000pp. Also works as an Apr 10 or Apr 11 dinner option if plans change.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>The Juniper (gin bar)</b> — open late · Nakameguro
+            <div class="note">Already on the Apr 11 itinerary post-Gonpachi. Worth noting for Apr 10 as well if the evening ends early enough (~10:30pm taxi over). Craft gin bar, curated selection, calm atmosphere.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Chinese+Cafe+8+Roppongi+Tokyo" rel="noopener" target="_blank">Chinese Café 8</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sushizanmai+Roppongi+Tokyo" rel="noopener" target="_blank">Sushizanmai Roppongi</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fuuki+Noodle+Factory+Roppongi" rel="noopener" target="_blank">Fuuki Noodle Factory</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gaburi+Chicken+Akasaka+Tokyo" rel="noopener" target="_blank">Gaburi Chicken Akasaka</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Roppongi+Tsunagu+ramen" rel="noopener" target="_blank">Roppongi Tsunagu</a>
+      </div>
+    </section>
+
+  </div><!-- /grid -->
+
+</div><!-- /wrap -->
+
+<!-- ═══════════════ BAKERIES SECTION ═══════════════ -->
+<div class="wrap">
+
+  <div class="section-header" id="bakeries">🥐 Nearby Bakeries</div>
+  <div class="meta" style="margin-bottom:14px;font-size:12px;color:var(--muted);">Good morning options and afternoon treat stops near each hotel.</div>
+  <div class="grid">
+
+    <!-- NAMBA OSAKA -->
+    <section class="card">
+      <div class="day">
+        <h2>Caption Namba Osaka · Apr 5–7</h2>
+        <span class="pill pill-info">Within 8 min walk</span>
+      </div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            <b>Cinderella Croissant</b> — 3-min walk · 1-22-27 Nipponbashi · ⭐ 4.3 (159)
+            <div class="note">Famous Hokkaido milk cream croissants — flaky, buttery shell with cold sweet cream filling. Reviewers from Kuromon always mention it as a highlight. Opens 9am. Closed Mondays. <b>Open Apr 5 (Sun) ✅ · Closed Apr 6 (Mon) ✗ · Open Apr 7 (Tue) ✅</b></div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Masamiya Cake (麻莎米亚)</b> — 5-min walk · Kozu 3-7-14 · ⭐ 4.8 (12)
+            <div class="note">Tiny neighbourhood bakery, everything baked fresh daily. Phenomenal curry bread and coconut tart with osmanthus latte. Opens 9:30am. Closed Tuesdays. <b>Open Apr 5 (Sun) ✅ · Open Apr 6 (Mon) ✅ · Closed Apr 7 (Tue) ✗</b></div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Salon De The Alcyon</b> — 7-min walk · 1-6-20 Namba · ⭐ 4.3 (807)
+            <div class="note">French patisserie downstairs, cozy 18-seat tearoom upstairs. Standout pistachio tart with raspberry jam, house-made floral teas, rum baba, mont blanc. Opens 11am weekends, 11:30am weekdays. Open daily. Best for an afternoon treat on Apr 5 or Apr 6.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Namba Gute</b> — 8-min walk · Namba Walk underground arcade · ⭐ 3.8
+            <div class="note">Japanese bakery open 8am–9pm daily, inside the underground shopping street. Good melon pan and ham &amp; onion buns. Best as a quick grab-and-go if you're heading to the subway early — Apr 6 morning (7am Kyoto departure) or Apr 7 pre-Kuromon.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Cinderella+Croissant+Nipponbashi+Osaka" rel="noopener" target="_blank">Cinderella Croissant</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Masamiya+Cake+Kozu+Osaka" rel="noopener" target="_blank">Masamiya Cake</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Salon+De+The+Alcyon+Namba+Osaka" rel="noopener" target="_blank">Salon De The Alcyon</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Namba+Gute+Osaka" rel="noopener" target="_blank">Namba Gute</a>
+      </div>
+    </section>
+
+    <!-- GRAND HYATT ROPPONGI -->
+    <section class="card">
+      <div class="day">
+        <h2>Grand Hyatt Roppongi · Apr 10–12</h2>
+        <span class="pill pill-info">Within 10 min walk</span>
+      </div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            <b>Fiorentina Pastry Boutique</b> — in-hotel (Grand Hyatt 1F) · ⭐ 4.3
+            <div class="note">The Grand Hyatt's own patisserie. Tiramisu in a glass jar, ricotta cheesecake, mont blanc, yuzu melon pan (¥200). Beautiful pastries, open 9am–8pm daily. Zero effort — literally downstairs. Best for Apr 12 departure morning before the car.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Bricolage Bread &amp; Co.</b> — 4-min walk · Keyakizaka Terrace 1F · ⭐ 4.3 (1,301)
+            <div class="note">One of Roppongi's most acclaimed bakeries. Almond croissant is a standout, pastrami sandwich excellent, shakshuka with avocado a favourite. Opens 7am Tue–Sun (closed Mondays). Sit-down seating available with a drink. Apr 10 (Fri) ✅ · Apr 11 (Sat) ✅ · Apr 12 (Sun) ✅. Arrive early — popular and sells out.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>L'Atelier du Pain Roppongi</b> — 9-min walk · 6-1-12 Roppongi · ⭐ 4.2 (660)
+            <div class="note">French-Japanese bakery with a huge wood-burning oven. Pistachio cannelé, walnut tart, chocolate mochi bun, ham &amp; corn croissant. Opens 7:30am Mon–Fri, 9am weekends. Salt buns reheated outside the counter are exceptional. Seating available with a drink.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>Patisserie Coco Ange</b> — 9-min walk · 6-1-12 Roppongi · ⭐ 4.3 (145)
+            <div class="note">Small neighbourhood patisserie known to locals. Chocolate canelé, walnut snow ball cookies, chewy salt bun at the entrance — reviews rave about it. Opens 7:30am Mon–Fri, 9am weekends, until 10pm. Good afternoon or late-evening dessert stop.</div>
+          </span>
+        </li>
+        <li>
+          <span class="item">
+            <b>La Boutique de Joël Robuchon</b> — 2-min walk · Roppongi Hills Hillside 2F · ⭐ 4.2
+            <div class="note">Robuchon's bakery counter in Roppongi Hills. Curry bun and wine-braised beef croissant are standouts. Tuna sandwich for a grab-and-go lunch. Opens 10am–9pm daily.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fiorentina+Pastry+Boutique+Grand+Hyatt+Tokyo" rel="noopener" target="_blank">Fiorentina (in-hotel)</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bricolage+Bread+Co+Roppongi" rel="noopener" target="_blank">Bricolage Bread &amp; Co.</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=L'Atelier+du+Pain+Roppongi" rel="noopener" target="_blank">L'Atelier du Pain</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Patisserie+Coco+Ange+Roppongi" rel="noopener" target="_blank">Patisserie Coco Ange</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=La+Boutique+Joel+Robuchon+Roppongi+Hills" rel="noopener" target="_blank">Joël Robuchon Boutique</a>
+      </div>
+    </section>
+
+  </div><!-- /grid -->
+
+</div><!-- /wrap -->
+
+<!-- ═══════════════ CHERRY BLOSSOM SECTION ═══════════════ -->
+<div class="wrap">
+
+  <div class="section-header" id="sakura">Cherry Blossom Options</div>
+  <div class="meta" style="margin-bottom:14px;font-size:12px;color:var(--muted);">Early April is peak sakura season. Check forecasts closer to the trip — bloom dates shift by a week or more depending on the year. Slot these in when timing is right.</div>
+  <div class="grid">
+
+    <section class="card card-wide">
+      <div class="day">
+        <h2>Tokyo Sakura Spots</h2>
+        <span class="pill pill-sakura">Cherry Blossoms</span>
+      </div>
+      <div class="meta">Best worked into Apr 4, 10, or 11 depending on peak bloom timing. All are near your existing routes.</div>
+      <ul class="sched">
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Meguro River</b> <span class="optional">top pick</span>
+            <div class="note">You're already walking to Nakameguro on Apr 10 — the canal is lined with 800+ cherry trees, lit with pink lanterns at dusk. Time your Traveler's Factory visit for golden hour and walk the river afterward. Arguably the single best sakura moment in Tokyo. Evenings are magical but crowded on weekends.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Shinjuku Gyoen</b>
+            <div class="note">Tokyo's best all-around hanami park — 1,000+ trees across 65 varieties, meaning some will be blooming no matter your exact dates. Huge lawns perfect for a family picnic. ¥500 entry. No alcohol allowed, which keeps it calm and family-friendly. Could replace the afternoon gap on Apr 11 (during the spa split). Closes 6:00 PM. ~20 min taxi from Grand Hyatt.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Ueno Park</b>
+            <div class="note">Classic hanami atmosphere — over 1,000 trees lining the main path. More lively and festive than Shinjuku Gyoen (food stalls, crowds, energy). Could pair with a Nakano Broadway morning on Apr 12 if you leave slightly earlier. ~30 min from Grand Hyatt by metro.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Chidorigafuchi</b>
+            <div class="note">Moat-side walkway near the Imperial Palace — rent rowboats surrounded by overhanging cherry branches. Stunning for photos. Evening illumination until 10 PM. Could work as an after-dinner detour on Apr 10 or 11. ~15 min taxi from Roppongi.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Roppongi Hills / Mori Garden</b>
+            <div class="note">Right at your Grand Hyatt doorstep. Small but beautiful — illuminated cherry trees along the garden path behind Roppongi Hills. Zero detour needed. Perfect for a nightcap stroll on any evening Apr 9–11.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Meguro+River+Cherry+Blossoms" rel="noopener" target="_blank">Meguro River</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen" rel="noopener" target="_blank">Shinjuku Gyoen</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ueno+Park+Cherry+Blossoms" rel="noopener" target="_blank">Ueno Park</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Chidorigafuchi+Cherry+Blossoms" rel="noopener" target="_blank">Chidorigafuchi</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mori+Garden+Roppongi+Hills" rel="noopener" target="_blank">Mori Garden</a>
+      </div>
+    </section>
+
+    <section class="card card-wide">
+      <div class="day">
+        <h2>Osaka &amp; Kyoto Sakura Spots</h2>
+        <span class="pill pill-sakura">Cherry Blossoms</span>
+      </div>
+      <div class="meta">Best worked into Apr 5 evening, Apr 6 (Kyoto day), or Apr 7 morning. Osaka and Kyoto bloom at roughly the same time.</div>
+      <ul class="sched">
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Osaka Castle Nishinomaru Garden</b> <span class="optional">top pick</span>
+            <div class="note">600+ cherry trees with the castle as backdrop — one of the most iconic sakura views in Japan. Evening illumination available. Already listed as an Apr 7 option (Option A). ¥350 entry. If you only see one Osaka sakura spot, make it this one.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Kema Sakuranomiya Park</b>
+            <div class="note">4,500+ trees along the Okawa River — walkable from Caption by Hyatt Namba (~20 min along the river). Perfect for an early morning or evening stroll on Apr 5 or 6. Less touristy than the castle. River cruise boats run during peak bloom.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Philosopher's Path, Kyoto</b>
+            <div class="note">Canal-side walking path lined with hundreds of cherry trees — 2km from Ginkaku-ji to Nanzen-ji. Not on your Apr 6 route but could replace the Gion afternoon wander if blossoms are peaking. ~20 min taxi from Higashiyama.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Maruyama Park, Kyoto</b>
+            <div class="note">Adjacent to Yasaka Shrine — you're walking right past it on Apr 6. The famous weeping cherry tree (shidarezakura) is illuminated at night. Free entry. Even a 15-minute detour through the park is worth it during bloom.</div>
+          </span>
+        </li>
+        <li>
+          <span class="time"></span>
+          <span class="item">
+            <b>Arashiyama area</b>
+            <div class="note">The mountains around Togetsukyo Bridge turn pink in early April — you'll already be here on Apr 6 morning. Stand on the bridge and look upstream for the classic postcard view. No detour needed, just be aware of it.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Osaka+Castle+Nishinomaru+Garden" rel="noopener" target="_blank">Nishinomaru Garden</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kema+Sakuranomiya+Park+Osaka" rel="noopener" target="_blank">Kema Sakuranomiya</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Philosopher+Path+Kyoto" rel="noopener" target="_blank">Philosopher's Path</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Maruyama+Park+Kyoto" rel="noopener" target="_blank">Maruyama Park</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge+Arashiyama" rel="noopener" target="_blank">Arashiyama Bridge</a>
+      </div>
+    </section>
+
+  </div><!-- /grid -->
+</div><!-- /wrap sakura -->
+
+<!-- ═══════════════ HOTEL TAXI CARDS ═══════════════ -->
+<div class="wrap">
+
+  <div class="section-header" id="hotels">Hotels · Taxi Reference</div>
+  <div class="meta" style="margin-bottom:14px;font-size:12px;color:var(--muted);">Show these to any taxi driver — or just say the name followed by "onegaishimasu".</div>
+  <div class="grid">
+
+    <section class="card">
+      <div class="day">
+        <h2>Caption by Hyatt Kabutocho</h2>
+        <span class="pill pill-tokyo">Apr 3–4 · Tokyo</span>
+      </div>
+      <div class="meta">Kabutocho · Nihonbashi · Central Tokyo</div>
+      <ul class="sched">
+        <li>
+          <span class="time">Show driver</span>
+          <span class="item"><b style="font-size:20px;">キャプションバイハイアット兜町</b></span>
+        </li>
+        <li>
+          <span class="time">Or say</span>
+          <span class="item"><em>"Caption by Hyatt Kabutocho, onegaishimasu"</em></span>
+        </li>
+        <li>
+          <span class="time">Address</span>
+          <span class="item" style="font-size:13px;">東京都中央区日本橋兜町9-1</span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Caption+by+Hyatt+Kabutocho+Tokyo" rel="noopener" target="_blank">Caption by Hyatt Kabutocho</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="day">
+        <h2>Caption by Hyatt Namba Osaka</h2>
+        <span class="pill pill-osaka">Apr 5–7 · Osaka</span>
+      </div>
+      <div class="meta">Nipponbashi · Namba · Walkable to Dotonbori, Kuromon &amp; Shinsaibashi</div>
+      <ul class="sched">
+        <li>
+          <span class="time">Show driver</span>
+          <span class="item"><b style="font-size:20px;">キャプション バイ ハイアット 難波 大阪</b></span>
+        </li>
+        <li>
+          <span class="time">Or say</span>
+          <span class="item"><em>"Caption by Hyatt Namba, onegaishimasu"</em></span>
+        </li>
+        <li>
+          <span class="time">Address</span>
+          <span class="item" style="font-size:13px;">大阪府大阪市中央区日本橋2-7-5</span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Caption+by+Hyatt+Namba+Osaka" rel="noopener" target="_blank">Caption by Hyatt Namba</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="day">
+        <h2>Tokyo Disneyland Hotel</h2>
+        <span class="pill pill-disney">Apr 7–10 · Urayasu</span>
+      </div>
+      <div class="meta">Maihama · Urayasu · Adjacent to Disneyland main gate</div>
+      <ul class="sched">
+        <li>
+          <span class="time">Show driver</span>
+          <span class="item"><b style="font-size:20px;">東京ディズニーランドホテル</b></span>
+        </li>
+        <li>
+          <span class="time">Or say</span>
+          <span class="item"><em>"Tokyo Disneyland Hotel, onegaishimasu"</em> — all drivers know it</span>
+        </li>
+        <li>
+          <span class="time">Address</span>
+          <span class="item" style="font-size:13px;">千葉県浦安市舞浜1-1</span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland+Hotel" rel="noopener" target="_blank">Tokyo Disneyland Hotel</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="day">
+        <h2>Grand Hyatt Tokyo</h2>
+        <span class="pill pill-tokyo">Apr 9–12 · Roppongi</span>
+      </div>
+      <div class="meta">Roppongi Hills · Minato-ku · Central Tokyo</div>
+      <ul class="sched">
+        <li>
+          <span class="time">Show driver</span>
+          <span class="item"><b style="font-size:20px;">グランドハイアット東京</b></span>
+        </li>
+        <li>
+          <span class="time">Or say</span>
+          <span class="item"><em>"Grand Hyatt Tokyo, onegaishimasu"</em> — widely known landmark</span>
+        </li>
+        <li>
+          <span class="time">Address</span>
+          <span class="item" style="font-size:13px;">東京都港区六本木6-10-3</span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Grand+Hyatt+Tokyo+Roppongi" rel="noopener" target="_blank">Grand Hyatt Tokyo</a>
+      </div>
+    </section>
+
+  </div><!-- /grid -->
+</div><!-- /wrap hotels -->
+
+<!-- ════════════════ BUDGET ════════════════ -->
+<div class="wrap" id="budget" style="margin-top:48px">
+  <div class="section-header">Daily Yen Budget</div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div class="day">
+      <h2>How to read this</h2>
+      <span class="pill pill-info">Reference</span>
+    </div>
+    <ul class="howto">
+      <li>Costs shown are <b>per person</b> unless marked <b>total</b> (e.g. taxis, single-entry fees shared by the family).</li>
+      <li>Family composition assumed: <b>2 adults · 1 junior (age 12–17) · 1 child (age 11)</b>. Adjust as needed.</li>
+      <li>Meals marked <b>est.</b> are based on menu ranges — order conservatively and you'll be at the low end.</li>
+      <li>Taxis are estimates — real fares vary by traffic. Tokyo taxis start at ¥500; Osaka/Kyoto similar.</li>
+      <li><b>Disney Premier Access</b> (paid skip-the-line) costs ¥1,500–2,500 per ride per person — budget separately if you plan to use it. Not included here.</li>
+      <li>Card payments accepted everywhere listed <b>except</b> street food stalls and markets (Tsukiji, Kuromon, Dotonbori street vendors). Keep ¥3,000–5,000 cash per person per day for stalls, arcade machines, and taxis — especially in Osaka/Kyoto where card acceptance is less reliable.</li>
+      <li><b>Disney tickets are already paid ✅</b> — removed from day totals below.</li>
+    </ul>
+  </div>
+
+  <div class="grid">
+
+    <!-- APR 3 -->
+    <section class="card" id="budget-apr3">
+      <div class="day">
+        <h2>Apr 3 — Arrival</h2>
+        <span class="pill pill-tokyo">Tokyo</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">Narita → hotel (van/taxi)</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥5,000–7,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Suica IC cards × 4 (initial load)</td><td style="text-align:right">¥3,000–5,000</td><td style="text-align:right;color:var(--accent2)">¥12,000–20,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Dinner (est.)</td><td style="text-align:right">¥1,500–3,000</td><td style="text-align:right;color:var(--accent2)">¥6,000–12,000</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥23,000–39,000</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Suica loads are pre-loaded spend, not a one-time cost — the balance carries through the whole trip.</div>
+    </section>
+
+    <!-- APR 4 -->
+    <section class="card" id="budget-apr4">
+      <div class="day">
+        <h2>Apr 4 — Tsukiji · Ginza</h2>
+        <span class="pill pill-tokyo">Tokyo</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">Taxi to Tsukiji</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥1,000–1,500</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Tsukiji grazing (skewers, tamagoyaki etc.)</td><td style="text-align:right">¥1,000–2,000</td><td style="text-align:right;color:var(--accent2)">¥4,000–8,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Lunch — AFURI / Tentora / Ginza Itsuki (pick one)</td><td style="text-align:right">¥1,000–2,000</td><td style="text-align:right;color:var(--accent2)">¥4,000–8,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">HIGASHIYA tea</td><td style="text-align:right">¥1,500–2,500</td><td style="text-align:right;color:var(--accent2)">¥6,000–10,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Nemuro Hanamaru dinner (est.)</td><td style="text-align:right">¥3,000–5,000</td><td style="text-align:right;color:var(--accent2)">¥12,000–20,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Gashapon / arcade (son)</td><td style="text-align:right">¥1,000–3,000</td><td style="text-align:right;color:var(--accent2)">—</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥27,000–48,500</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Camera shopping (if buying) is a separate large-spend item: Map Camera new kit ¥253,440 · used body ¥192,800 · BicCamera in-store tax-free ~¥255,000 (pricier than Map Camera new)</div>
+    </section>
+
+    <!-- APR 5 -->
+    <section class="card" id="budget-apr5">
+      <div class="day">
+        <h2>Apr 5 — Shinkansen · Osaka Arrival</h2>
+        <span class="pill pill-osaka">Osaka</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">Ekiben (Matsuri bento)</td><td style="text-align:right">¥1,000–2,000</td><td style="text-align:right;color:var(--accent2)">¥4,000–8,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Tsutenkaku Tower entry</td><td style="text-align:right">¥900</td><td style="text-align:right;color:var(--accent2)">¥3,600</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Jan Jan Yokocho arcade games</td><td style="text-align:right">¥500–1,000</td><td style="text-align:right;color:var(--accent2)">—</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Dearbros Omurice lunch</td><td style="text-align:right">¥1,000–2,000</td><td style="text-align:right;color:var(--accent2)">¥4,000–8,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Midosuji Line Shin-Osaka → Namba</td><td style="text-align:right">¥240</td><td style="text-align:right;color:var(--accent2)">¥960</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">🥩 Kitan Hibiki dinner ✅ RESERVED · #SSN5365J5Q</td><td style="text-align:right">¥8,000–10,000</td><td style="text-align:right;color:var(--accent2)">¥32,000–40,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Dotonbori evening (takoyaki etc.)</td><td style="text-align:right">¥1,000–2,000</td><td style="text-align:right;color:var(--accent2)">¥4,000–8,000</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥48,560–68,560</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Shinkansen (Apr 5 + Apr 7 return) booked separately — not included here.</div>
+    </section>
+
+    <!-- APR 6 -->
+    <section class="card" id="budget-apr6">
+      <div class="day">
+        <h2>Apr 6 — Kyoto Day</h2>
+        <span class="pill pill-osaka">Kyoto</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">Hankyu train × 2 (return)</td><td style="text-align:right">¥1,280</td><td style="text-align:right;color:var(--accent2)">¥5,120</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Taxi Kawaramachi → Arashiyama</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥2,000–2,500</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Tenryu-ji garden entry</td><td style="text-align:right">¥500</td><td style="text-align:right;color:var(--accent2)">¥2,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Okochi Sanso Villa entry (incl. matcha)</td><td style="text-align:right">¥1,000</td><td style="text-align:right;color:var(--accent2)">¥4,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Taxi Arashiyama → Higashiyama</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥3,000–3,500</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Kiyomizu-dera entry</td><td style="text-align:right">¥500</td><td style="text-align:right;color:var(--accent2)">¥2,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">🍽️ Tempura Endo Yasaka lunch ✅ RESERVED · #AX2UVX</td><td style="text-align:right">¥4,000–7,000</td><td style="text-align:right;color:var(--accent2)">¥16,000–28,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Sannenzaka shopping (ceramics, fans, stalls, Ghibli shop)</td><td style="text-align:right">est. ¥3,000–8,000pp</td><td style="text-align:right;color:var(--accent2)">¥12,000–32,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Dotonbori evening (Daruma + Fukutaro + takoyaki)</td><td style="text-align:right">¥2,000–4,000</td><td style="text-align:right;color:var(--accent2)">¥8,000–16,000</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥58,120–79,120</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Shopping budget is variable — ceramics and fans can range from ¥500 souvenirs to ¥10,000+ pieces. Bring ¥10,000–15,000 cash for the afternoon as many Higashiyama shops are cash-preferred.</div>
+    </section>
+
+    <!-- APR 7 -->
+    <section class="card" id="budget-apr7">
+      <div class="day">
+        <h2>Apr 7 — Kuromon · Osaka → Disney</h2>
+        <span class="pill pill-osaka">Osaka → Disney</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">Kuromon Market grazing</td><td style="text-align:right">¥500–1,500</td><td style="text-align:right;color:var(--accent2)">¥2,000–6,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">🥩 Wagyu Idaten lunch (est.)</td><td style="text-align:right">¥3,000–4,000</td><td style="text-align:right;color:var(--accent2)">¥12,000–16,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Midosuji Line Namba → Shin-Osaka</td><td style="text-align:right">¥290</td><td style="text-align:right;color:var(--accent2)">¥1,160</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Keiyo Line Tokyo → Maihama</td><td style="text-align:right">¥220</td><td style="text-align:right;color:var(--accent2)">¥880</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥16,040–24,040</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Dinner at Disney Hotel on arrival — covered by hotel dining or park food. Shinkansen booked separately.</div>
+    </section>
+
+    <!-- APR 8 -->
+    <section class="card" id="budget-apr8">
+      <div class="day">
+        <h2>Apr 8 — Tokyo Disneyland</h2>
+        <span class="pill pill-disney">Disney</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">1-Day Passport — Adult × 2 <span style="color:#888;font-size:11px">(already paid)</span></td><td style="text-align:right;color:#888;text-decoration:line-through">¥18,800–20,400</td><td style="text-align:right;color:#4caf80">✅ PAID</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">1-Day Passport — Junior (12–17) × 1 <span style="color:#888;font-size:11px">(already paid)</span></td><td style="text-align:right;color:#888;text-decoration:line-through">¥7,800–8,500</td><td style="text-align:right;color:#4caf80">✅ PAID</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">1-Day Passport — Child (4–11) × 1 <span style="color:#888;font-size:11px">(already paid)</span></td><td style="text-align:right;color:#888;text-decoration:line-through">¥5,200–5,600</td><td style="text-align:right;color:#4caf80">✅ PAID</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Park food (all meals + snacks)</td><td style="text-align:right">¥3,000–5,000</td><td style="text-align:right;color:var(--accent2)">¥12,000–20,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Souvenirs / merch</td><td style="text-align:right">¥2,000–5,000</td><td style="text-align:right;color:var(--accent2)">¥8,000–20,000</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥20,000–40,000 (tickets pre-paid)</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Apr 8 is a Wednesday — weekday April pricing. Disney Premier Access (skip-line) ¥1,500–2,500 per ride — budget extra if using it. Tickets already booked ✅.</div>
+    </section>
+
+    <!-- APR 9 -->
+    <section class="card" id="budget-apr9">
+      <div class="day">
+        <h2>Apr 9 — Tokyo DisneySea</h2>
+        <span class="pill pill-disney">Disney</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">1-Day Passport — same as Apr 8 <span style="color:#888;font-size:11px">(already paid)</span></td><td style="text-align:right;color:#888;text-decoration:line-through">¥31,800–34,500</td><td style="text-align:right;color:#4caf80">✅ PAID</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Park food (all meals + snacks)</td><td style="text-align:right">¥3,000–5,000</td><td style="text-align:right;color:var(--accent2)">¥12,000–20,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Souvenirs / merch</td><td style="text-align:right">¥2,000–5,000</td><td style="text-align:right;color:var(--accent2)">¥8,000–20,000</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥20,000–40,000 (tickets pre-paid)</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Apr 9 is a Thursday — same weekday pricing as Apr 8. Fantasy Springs area = higher souvenir spend likely.</div>
+    </section>
+
+    <!-- APR 10 -->
+    <section class="card" id="budget-apr10">
+      <div class="day">
+        <h2>Apr 10 — Harajuku · Shibuya · Nakameguro</h2>
+        <span class="pill pill-tokyo">Tokyo</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">Taxi Disney Hotel → Grand Hyatt</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥5,000–7,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Nezu Museum entry</td><td style="text-align:right">¥1,500</td><td style="text-align:right;color:var(--accent2)">¥6,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Age.3 milk bread + drinks</td><td style="text-align:right">¥1,000–1,500</td><td style="text-align:right;color:var(--accent2)">¥4,000–6,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Katsudon-ya Zuicho lunch</td><td style="text-align:right">¥1,000–2,000</td><td style="text-align:right;color:var(--accent2)">¥4,000–8,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">🥩 Hikiniku to Come dinner ✅ RESERVED · #76EHAM</td><td style="text-align:right">¥3,000–5,000</td><td style="text-align:right;color:var(--accent2)">¥12,000–20,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Taxi Shibuya → Nakameguro</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥1,000–1,500</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Tower Records Shibuya (taxi)</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥800–1,200</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Pokémon Center / Nintendo TOKYO</td><td style="text-align:right">¥2,000–5,000</td><td style="text-align:right;color:var(--accent2)">—</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥32,800–49,700</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Denim shopping (Studio D'Artisan, Iron Heart etc.) is a separate large-spend item not included in this estimate.</div>
+    </section>
+
+    <!-- APR 11 -->
+    <section class="card" id="budget-apr11">
+      <div class="day">
+        <h2>Apr 11 — Kappabashi · teamLab · Gonpachi</h2>
+        <span class="pill pill-tokyo">Tokyo</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">Taxi Grand Hyatt → Kappabashi</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥2,500–3,500</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Lunch — Grill Grand or Asakusa Gyukatsu (est.)</td><td style="text-align:right">¥2,000–3,500</td><td style="text-align:right;color:var(--accent2)">¥8,000–14,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Taxi Asakusa → Ginza (Rabbicour drop)</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥1,500–2,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">💆 Rabbicour head spa ✅ RESERVED (2 hr)</td><td style="text-align:right">¥14,000–15,000</td><td style="text-align:right;color:var(--accent2)">¥14,000–15,000 (1 person)</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">teamLab Borderless ✅ #AALCKPNN7A4F-0001 (3 tickets + 3 teas)</td><td style="text-align:right">¥11,500</td><td style="text-align:right;color:var(--accent2)">¥11,500 (paid)</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Mori Art Museum + Tokyo City View</td><td style="text-align:right">¥2,000</td><td style="text-align:right;color:var(--accent2)">¥8,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">🍽️ Gonpachi Nishi-Azabu dinner (est.)</td><td style="text-align:right">¥4,000–7,000</td><td style="text-align:right;color:var(--accent2)">¥16,000–28,000</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Taxi Gonpachi → Nakameguro</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥1,000–1,500</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">The Juniper gin bar (est.)</td><td style="text-align:right">¥2,000–4,000</td><td style="text-align:right;color:var(--accent2)">¥4,000–8,000 (adults)</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥67,900–93,400</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Kappabashi knife shopping not included — allow ¥10,000–80,000+ depending on what you buy. This is the biggest spend day of the trip outside of Disney.</div>
+    </section>
+
+    <!-- APR 12 -->
+    <section class="card" id="budget-apr12">
+      <div class="day">
+        <h2>Apr 12 — Nakano Broadway · Departure</h2>
+        <span class="pill pill-depart">Departure</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8">
+        <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+          <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Item</th>
+          <th style="text-align:right;padding:4px 0;font-weight:600;white-space:nowrap">Per person</th>
+          <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600;white-space:nowrap">Family total</th>
+        </tr></thead>
+        <tbody style="color:#c8c8d8">
+          <tr><td style="padding:4px 8px 4px 0">Taxi Grand Hyatt → Nakano (or metro)</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥2,500–3,500 taxi / ¥800 metro</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Nakano Broadway spend (merch / manga)</td><td style="text-align:right">¥2,000–10,000</td><td style="text-align:right;color:var(--accent2)">—</td></tr>
+          <tr><td style="padding:4px 8px 4px 0">Lunch (hotel / konbini)</td><td style="text-align:right">¥500–1,500</td><td style="text-align:right;color:var(--accent2)">¥2,000–6,000</td></tr>
+          <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Car service Grand Hyatt → Narita T2</td><td style="text-align:right">—</td><td style="text-align:right;color:var(--accent2)">¥20,000–25,000</td></tr>
+        </tbody>
+        <tfoot><tr style="border-top:1px solid #2a2a3a;color:var(--warn);font-weight:600">
+          <td style="padding:6px 8px 4px 0">Day estimate</td><td></td><td style="text-align:right">¥24,500–34,500</td>
+        </tr></tfoot>
+      </table>
+      <div class="note" style="margin-top:8px">Book car service via Grand Hyatt concierge at check-in. Budget ¥20,000–25,000 for Hinomaru Limousine or S-Class Hire.</div>
+    </section>
+
+  </div><!-- /grid -->
+
+  <!-- TRIP TOTAL -->
+  <div class="card" style="margin-top:8px;margin-bottom:32px">
+    <div class="day">
+      <h2>Trip Total — Known Costs</h2>
+      <span class="pill pill-info">Summary</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:2">
+      <thead><tr style="color:var(--accent);border-bottom:1px solid #2a2a3a">
+        <th style="text-align:left;padding:4px 8px 4px 0;font-weight:600">Category</th>
+        <th style="text-align:right;padding:4px 0 4px 8px;font-weight:600">Family total (est.)</th>
+      </tr></thead>
+      <tbody style="color:#c8c8d8">
+        <tr><td style="padding:4px 8px 4px 0">Taxis (all days combined)</td><td style="text-align:right;color:var(--accent2)">¥45,000–60,000</td></tr>
+        <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Trains (Suica — all legs excl. Shinkansen)</td><td style="text-align:right;color:var(--accent2)">¥8,000–12,000</td></tr>
+        <tr><td style="padding:4px 8px 4px 0">Entry fees (museums, temples, tower, teamLab, Mori)</td><td style="text-align:right;color:var(--accent2)">¥54,500–58,500</td></tr>
+        <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Disney tickets × 2 days (all 4 family members)</td><td style="text-align:right;color:var(--accent2)">✅ Pre-paid</td></tr>
+        <tr><td style="padding:4px 8px 4px 0">Restaurants (reserved + estimated meals)</td><td style="text-align:right;color:var(--accent2)">¥180,000–260,000</td></tr>
+        <tr style="background:rgba(255,255,255,.03)"><td style="padding:4px 8px 4px 0">Car service to Narita</td><td style="text-align:right;color:var(--accent2)">¥20,000–25,000</td></tr>
+      </tbody>
+      <tfoot>
+        <tr style="border-top:2px solid var(--accent);color:var(--warn);font-weight:700;font-size:14px">
+          <td style="padding:10px 8px 4px 0">Estimated trip total (excl. hotels, Shinkansen, shopping)</td>
+          <td style="text-align:right;padding:10px 0 4px 8px">¥391,000–504,000</td>
+        </tr>
+        <tr style="color:#888;font-size:12px">
+          <td colspan="2" style="padding:2px 0 4px 0">Not included: hotels · Shinkansen (booked) · souvenirs · denim / camera / Kappabashi purchases · Disney Premier Access · Rabbicour themed room upgrade (+¥1,000)</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div><!-- /wrap budget -->
+
+<!-- ── CAMERA SECTION ── -->
+<div class="wrap" style="max-width:860px;margin:40px auto 0;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+      <span style="font-size:26px">📷</span>
+      <h2 style="margin:0;font-family:'DM Serif Display',serif;font-size:22px;color:var(--accent)">Camera — Fujifilm X-E5</h2>
+    </div>
+    <p style="color:var(--muted);font-size:13px;margin:0 0 20px">Lens kit for the trip · rangefinder-style body · excellent for street and travel</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+
+      <!-- Lens 1 -->
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px">
+        <div style="color:var(--accent2);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Kit lens · daily carry</div>
+        <div style="font-size:16px;font-weight:500;color:var(--txt);margin-bottom:6px">XF 23mm f/2.8 R WR</div>
+        <div style="color:var(--muted);font-size:13px;line-height:1.7">
+          35mm equivalent · pancake profile · comes with X-E5 kit<br>
+          Weather-sealed · silent aperture ring · featherlight<br>
+          The "invisible camera" setup — barely adds bulk to the X-E5 body<br>
+          Ideal for Tsukiji, Dotonbori, Gion, Harajuku, Sannenzaka<br>
+          11-blade aperture · smooth bokeh at f/2.8
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:#888">Best for: street · markets · quick candids · compact everyday carry</div>
+      </div>
+
+      <!-- Lens 2 -->
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px">
+        <div style="color:var(--accent2);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Versatile zoom · all-rounder</div>
+        <div style="font-size:16px;font-weight:500;color:var(--txt);margin-bottom:6px">XF 18–55mm f/2.8–4 R LM OIS</div>
+        <div style="color:var(--muted);font-size:13px;line-height:1.7">
+          27–84mm equivalent · fast aperture throughout range<br>
+          OIS stabilisation — useful for low-light interiors (temples, teamLab)<br>
+          Great for family photos, wide architecture, food shots<br>
+          Solid build, fast autofocus
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:#888">Best for: family shots · architecture · food · low light · flexibility</div>
+      </div>
+
+    </div>
+
+    <!-- Usage guide -->
+    <div style="border-top:1px solid var(--border);padding-top:18px">
+      <div style="color:var(--accent);font-size:13px;font-weight:600;margin-bottom:12px">When to use which</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:12.5px">
+        <div style="background:rgba(130,212,192,.07);border:1px solid rgba(130,212,192,.15);border-radius:8px;padding:12px">
+          <div style="color:var(--accent2);font-weight:600;margin-bottom:6px">23mm pancake</div>
+          Tsukiji morning walk<br>Dotonbori night<br>Bamboo Grove<br>Harajuku street<br>Gion / Sannenzaka<br>Casual daily carry
+        </div>
+        <div style="background:rgba(232,201,122,.07);border:1px solid rgba(232,201,122,.15);border-radius:8px;padding:12px">
+          <div style="color:var(--accent);font-weight:600;margin-bottom:6px">18–55mm zoom</div>
+          Family group shots<br>Temple architecture<br>Kiyomizu-dera views<br>teamLab Borderless<br>Restaurant food photos<br>Disney + DisneySea
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:12px">
+          <div style="color:var(--warn);font-weight:600;margin-bottom:6px">Tips</div>
+          Start each day with 23mm on body<br>Pack 18–55 in bag for swap<br>Set film sim to Velvia or Classic Chrome<br>Use face-eye AF for candids<br>Charge battery every night
+        </div>
+      </div>
+    </div>
+
+    <!-- Camera shopping note -->
+    <div style="margin-top:18px;background:rgba(240,149,106,.07);border:1px solid rgba(240,149,106,.2);border-radius:8px;padding:14px;font-size:13px">
+      <div style="color:var(--warn);font-weight:600;margin-bottom:8px">📍 Where to buy — Map Camera is cheapest</div>
+      <div style="color:var(--muted);line-height:1.8">
+        <b style="color:var(--txt)">🏆 Map Camera Shinjuku</b> — 1-13-2 Nishi-Shinjuku (~15 min Marunouchi Line from Ginza). New kit: ¥253,440 · used "美品" kit: ¥241,800 · used body only: ¥192,800. Best prices and best used selection in Japan. Check <a href="https://www.mapcamera.com/search?keyword=fujifilm+x-e5" style="color:var(--accent2)" target="_blank">mapcamera.com</a> the night before.<br>
+        <b style="color:var(--txt)">Naniwa Camera Shinsaibashi (Osaka, Apr 5)</b> — right on the Shinsaibashisuji arcade, zero detour, new + used Fujifilm X Series, tax-free. Easiest purchase window of the trip.<br>
+        <b style="color:var(--txt)">BicCamera Yurakucho</b> — tax-free in-store ~¥255,000 for kit (online ¥281,600). More expensive than Map Camera new. Fallback only.<br>
+        <b style="color:var(--txt)">⚠️ Menu check:</b> X-E5 international units include English — confirm before paying.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ GINZA BARS ═══════════════ -->
+<div class="wrap">
+
+  <div class="section-header" id="ginza-bars">🍸 Ginza Bars — Post-Disney Adults Night Out</div>
+  <div class="meta" style="margin-bottom:14px;font-size:12px;color:var(--muted);">For after the parks close at 9pm on Apr 8 or 9. Maihama → Tokyo Station by Keiyo Line (~17 min, runs until midnight) → taxi or walk to Ginza (~10 min). Return by midnight for an early park start. Best night: <b>Apr 9 (Thu)</b> — you finish DisneySea with a proper sit-down dinner at Canaletto, exiting in better shape than after a full walking day at Disneyland.</div>
+  <div class="grid">
+
+    <section class="card">
+      <div class="day">
+        <h2>Bar High Five</h2>
+        <span class="pill pill-info">World's 50 Best · Cocktail</span>
+      </div>
+      <div class="meta">B1F, Efflore Ginza 5 Building · 4-4-9 Ginza · Open until 2am</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            Master bartender Hidetsugu Ueno — the most famous cocktail bar in Japan, perennial World's 50 Best Bars. No menu: tell him what spirits or flavours you're in the mood for and he builds something perfectly calibrated to you. Known for the hard shake, hand-carved diamond ice, and his signature Full Blossom (gin, sakura liqueur, maraschino). 10 bar stools + two small tables — arrive before 8pm to guarantee a seat, or later in the week when it quiets down.
+            <div class="note">Budget ¥2,500–4,000pp (drinks + seat charge). Worth every yen. If you visit one bar in Ginza, make it this one.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bar+High+Five+Ginza+Tokyo" rel="noopener" target="_blank">Bar High Five</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="day">
+        <h2>Star Bar Ginza</h2>
+        <span class="pill pill-info">Legend · Whisky + Classics</span>
+      </div>
+      <div class="meta">B1F, Sanwa Ginza Building · 1-5-13 Ginza · open late</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            Owner Hisashi Kishi is one of the great Japanese bartenders — has trained a generation of the city's best mixologists. Perfected classic cocktails, exceptional Japanese and Scotch whisky selection, hand-carved ice on everything. Very small and serious. No ordering from a menu — the conversation with the bartender is the experience.
+            <div class="note">Intimate, unhurried, world-class. Seat charge + ¥1,200+ drinks. Pairs beautifully with High Five if you want to do two bars in a night.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Star+Bar+Ginza+Tokyo" rel="noopener" target="_blank">Star Bar Ginza</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="day">
+        <h2>Punch Room</h2>
+        <span class="pill pill-info">Asia's 50 Best · Relaxed</span>
+      </div>
+      <div class="meta">2F, The Tokyo Edition Ginza · 2-8-13 Ginza</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            Asia's 50 Best Bars. Specialises in punch cocktails reinvented with Japanese spirits and flavours — sakura, wasabi, daikon, togarashi combined in ways that genuinely surprise. Dark walnut walls and plush velvet seating evoking a 19th-century London gentlemen's club. More relaxed and social than the serious quiet bars — good music, chatter, a buzz on weeknights.
+            <div class="note">The most approachable of the serious Ginza bars. Good if you want excellent cocktails without the reverent hush of High Five.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Punch+Room+Tokyo+Edition+Ginza" rel="noopener" target="_blank">Punch Room</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="day">
+        <h2>Mixology Salon</h2>
+        <span class="pill pill-info">Tea Cocktails · Views</span>
+      </div>
+      <div class="meta">13F, Ginza Six · 6-10-1 Ginza · opens 5pm</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            Sleek 8-seat bar on the 13th floor of Ginza Six — the same building you're shopping in on Apr 4. Specialises in "teatails": gyokuro and hojicha-based cocktails served in delicate glassware, à la carte or as tasting menus. The views over Ginza at night are spectacular.
+            <div class="note">Good for a first drink early in the evening before moving to a smaller bar. Already familiar with the building from your Apr 4 shopping day.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mixology+Salon+Ginza+Six+Tokyo" rel="noopener" target="_blank">Mixology Salon</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="day">
+        <h2>Bar Landscape</h2>
+        <span class="pill pill-info">Whisky · Classics</span>
+      </div>
+      <div class="meta">B1F, Sanwa Ginza Building · 6-4-9 Ginza</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            Run by husband-and-wife duo Kazuma and Tamiko Matsuo, both award-winning bartenders who trained under master Mori before opening their own place. Warm, atmospherically lit, excellent Japanese whisky list. Standout cocktails: whisky sour, tomato martini, passion fruit cocktail. A refreshing change from the typically all-male bartender scene.
+            <div class="note">Slightly more intimate and warm than the uber-serious bars. Budget ¥2,000–3,500pp.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bar+Landscape+Ginza+Tokyo" rel="noopener" target="_blank">Bar Landscape</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="day">
+        <h2>Beer Hall Lion</h2>
+        <span class="pill pill-info">Classic · Casual · Budget</span>
+      </div>
+      <div class="meta">5-chome Ginza · open until ~11pm</div>
+      <ul class="sched">
+        <li>
+          <span class="item">
+            Sapporo's historic beer hall, open since 1934. High ceilings, tiled mosaic walls, great draft beer, German-style food. Loud and lively — the complete opposite of the hushed whisky bars. Much cheaper (no seat charge, beer from ¥800), great atmosphere, and a genuine piece of Ginza history. Good if you just want a cold beer and some food after a long day.
+            <div class="note">No cover charge, no reverence required. The anti-High Five. Both have their place depending on the night.</div>
+          </span>
+        </li>
+      </ul>
+      <div class="maps">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Beer+Hall+Lion+Ginza+5+chome+Tokyo" rel="noopener" target="_blank">Beer Hall Lion</a>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="meta" style="margin-top:16px;padding:12px 16px;background:rgba(110,231,255,.05);border:1px solid rgba(110,231,255,.12);border-radius:10px;font-size:12px;">
+    <b style="color:var(--accent)">Practical notes:</b> Most serious cocktail bars carry a seat/table charge of ¥1,000–1,500 on top of drinks — budget ¥2,500–4,000pp for two rounds each. <b>High Five and Star Bar</b> are the two not to miss if you're into craft cocktails. Keiyo Line from Maihama Station → Tokyo Station (~17 min, ¥220) → 10-min taxi or walk to Ginza. Last train back around midnight. The hotel concierge can call a taxi for the return from Ginza (~¥2,000–3,000).
+  </div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="wrap" style="padding-top:0">
+    Japan Trip Plan v26 · Adams Family · Apr 3–12, 2026 &nbsp;·&nbsp; Save as offline HTML for phone use.
+  </div>
+</footer>
+
+</body>
+</html>
