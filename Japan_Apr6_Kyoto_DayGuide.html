@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>Apr 6 · Kyoto Day Guide · Adams Family</title>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+<meta name="apple-mobile-web-app-title" content="Kyoto Apr 6"/>
+<meta name="theme-color" content="#f5f0e8"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:    #1a1410;
+    --paper:  #f5f0e8;
+    --warm:   #e8dcc8;
+    --border: #d4c9b0;
+    --muted:  #8a7d6b;
+    --accent: #8b3a2a;   /* vermillion — torii gate red */
+    --gold:   #9a7a3a;
+    --stone:  #5a5248;
+    --moss:   #4a5e3a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 300;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    padding-bottom: 80px;
+  }
+
+  /* ── GRAIN TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: .4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    padding: 70px 24px 50px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '京都';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 280px;
+    font-weight: 300;
+    color: rgba(139,58,42,.06);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: -10px;
+  }
+  .hero-date {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 7vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: .5px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 24px auto 0;
+    opacity: .5;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(245,240,232,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 12px;
+    border-radius: 99px;
+    border: 1px solid transparent;
+    transition: all .2s;
+  }
+  nav a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── LAYOUT ── */
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+
+  /* ── TIMELINE ENTRY ── */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin-top: 10px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    opacity: .25;
+  }
+
+  .section {
+    padding: 52px 0 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+    animation: fadeUp .6s ease both;
+  }
+  .section:first-of-type { border-top: none; margin-top: 40px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+  .section-time {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--moss);
+    padding: 2px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .section-tag.red { background: var(--accent); }
+  .section-tag.gold { background: var(--gold); }
+  .section-tag.stone { background: var(--stone); }
+
+  /* ── SECTION TITLE ── */
+  .section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -.3px;
+    margin-bottom: 6px;
+  }
+  .section h2 em { font-style: italic; color: var(--accent); }
+  .section .tagline {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 22px;
+    font-style: italic;
+  }
+
+  /* ── BODY TEXT ── */
+  .prose {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #2a2318;
+    margin-bottom: 20px;
+  }
+  .prose + .prose { margin-top: -8px; }
+
+  /* ── HIGHLIGHT ITEMS ── */
+  .highlights {
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .highlight {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 16px;
+    padding: 4px 0;
+  }
+  .highlight-bar {
+    width: 3px;
+    background: var(--accent);
+    border-radius: 3px;
+    opacity: .6;
+    margin-top: 3px;
+  }
+  .highlight-bar.gold { background: var(--gold); }
+  .highlight-bar.moss { background: var(--moss); }
+  .highlight-bar.stone { background: var(--stone); }
+  .highlight-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: .2px;
+  }
+  .highlight-content p {
+    font-size: 13.5px;
+    color: var(--stone);
+    line-height: 1.6;
+  }
+  .highlight-content .tip {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11.5px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: .3px;
+  }
+  .highlight-content .tip::before { content: '→ '; }
+
+  /* ── STORY PULL QUOTE ── */
+  .pull {
+    margin: 32px -8px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--accent);
+    background: rgba(139,58,42,.04);
+    border-radius: 0 8px 8px 0;
+  }
+  .pull p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .pull cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  /* ── PRACTICAL BOX ── */
+  .practical {
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-top: 24px;
+  }
+  .practical-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .practical ul {
+    list-style: none;
+    padding: 0;
+  }
+  .practical ul li {
+    font-size: 13px;
+    color: var(--stone);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+    display: flex;
+    gap: 10px;
+  }
+  .practical ul li:last-child { border-bottom: none; }
+  .practical ul li::before {
+    content: '·';
+    color: var(--accent);
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* ── MAP BUTTONS ── */
+  .maps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 20px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    border: 1px solid var(--border);
+    color: var(--stone);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all .15s;
+    letter-spacing: .2px;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(139,58,42,.04); }
+  .btn::before { content: '↗'; font-size: 10px; opacity: .5; }
+
+  /* ── KIDS CALLOUT ── */
+  .kids {
+    background: rgba(74,94,58,.06);
+    border: 1px solid rgba(74,94,58,.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: 20px;
+  }
+  .kids-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--moss);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .kids p {
+    font-size: 13px;
+    color: #3a4a2e;
+    line-height: 1.55;
+  }
+
+  /* ── WARNING ── */
+  .warn {
+    background: rgba(139,58,42,.05);
+    border: 1px solid rgba(139,58,42,.18);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--accent);
+    line-height: 1.5;
+  }
+  .warn b { font-weight: 500; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    text-align: center;
+    margin: 40px 0 0;
+    color: var(--border);
+    font-size: 20px;
+    letter-spacing: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 60px;
+    padding: 24px 22px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: .3px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width: 560px) {
+    .hero { padding: 48px 18px 36px; }
+    .section { padding: 36px 0 8px; }
+    .pull { margin: 24px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════ HERO ════════════ -->
+<div class="hero">
+  <div class="hero-date">Monday · April 6, 2026 · Adams Family</div>
+  <h1>A Day in <em>Ancient</em> Kyoto</h1>
+  <p class="hero-sub">Arashiyama at dawn · temple stages over cedar forests · cobblestone descents · geisha backstreets</p>
+  <div class="hero-rule"></div>
+</div>
+
+<!-- ════════════ NAV ════════════ -->
+<nav>
+  <a href="#arashiyama">Arashiyama</a>
+  <a href="#kiyomizu">Kiyomizu-dera</a>
+  <a href="#sannenzaka">Sannenzaka</a>
+  <a href="#lunch">Lunch</a>
+  <a href="#miyako-odori">Miyako Odori</a>
+  <a href="#gion">Gion</a>
+  <a href="#dinner">Dotonbori</a>
+  <a href="#logistics">Logistics</a>
+</nav>
+
+<!-- ════════════ CONTENT ════════════ -->
+<div class="wrap">
+
+  <!-- ─── ARASHIYAMA ─── -->
+  <div class="section" id="arashiyama">
+    <div class="section-label">
+      <span class="section-time">8:45 AM</span>
+      <div class="section-rule"></div>
+      <span class="section-tag">Arashiyama</span>
+    </div>
+    <h2>The <em>Bamboo</em> Grove</h2>
+    <p class="tagline">Where the forest sounds like the ocean</p>
+
+    <p class="prose">Arriving at 8:45 AM puts you ahead of the tour groups, which matters here more than almost anywhere else in Kyoto. The Sagano Bamboo Grove is one of those places where the photographs don't prepare you — not because it's more beautiful than expected, but because it's more <em>sensory</em>. The stalks rise 30 meters and when the wind moves through them the sound is a deep, hollow percussion that the Japanese call one of the "100 Soundscapes of Japan." Tell the kids to close their eyes for a moment and just listen.</p>
+
+    <p class="prose">The grove path is short — about 500 meters — so resist the instinct to rush through it. Walk slowly. The light through the canopy in the morning is extraordinary, filtering green-gold through the culms. This is a moment worth being fully present for.</p>
+
+    <div class="pull">
+      <p>The Japanese government officially designated the sound of wind through the Sagano bamboo as one of the 100 soundscapes worth preserving. Stand still and you'll understand why.</p>
+      <cite>Sagano Bamboo Grove, Arashiyama</cite>
+    </div>
+
+    <div class="highlights">
+      <div class="highlight">
+        <div class="highlight-bar moss"></div>
+        <div class="highlight-content">
+          <h3>Tenryu-ji Temple & Garden</h3>
+          <p>A UNESCO World Heritage Site directly adjacent to the bamboo grove. The garden — designed in 1255 by Zen master Musō Soseki — uses the surrounding mountains as "borrowed scenery," making the garden feel infinite. The pond reflects Arashiyama mountain perfectly on still mornings. Don't miss the painted ceiling dragon in the main hall — it appears to follow you with its eyes as you move beneath it.</p>
+          <span class="tip">Garden entry ¥500. Temple buildings extra ¥300. The garden alone is sufficient.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar gold"></div>
+        <div class="highlight-content">
+          <h3>Okochi Sanso Villa</h3>
+          <p>The hidden estate of 1920s silent film actor Okochi Denjiro, perched above the bamboo grove with staggering views over Kyoto. Most visitors to Arashiyama never find it. The garden winds through several teahouses, stone lanterns, and viewpoints — the upper terrace view is genuinely one of the finest in all of Kyoto. Entry includes matcha and a wagashi sweet served in a traditional tatami room.</p>
+          <span class="tip">¥1,000 entry includes tea. Allow 30–40 minutes. Worth every minute.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="kids">
+      <div class="kids-title">For the kids</div>
+      <p>The <strong>rickshaw rides</strong> along the bamboo grove path are a genuine highlight — human-powered jinrikisha pull you through the grove while the driver narrates (some speak English). They're not cheap (around ¥5,000 for two) but for kids it's magical and worth the splurge for at least one pass through. Book on the spot from the drivers near the grove entrance.</p>
+    </div>
+
+    <div class="maps">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sagano+Bamboo+Grove+Arashiyama" rel="noopener" target="_blank">Bamboo Grove</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tenryu-ji+Temple+Arashiyama" rel="noopener" target="_blank">Tenryu-ji</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Okochi+Sanso+Villa+Arashiyama" rel="noopener" target="_blank">Okochi Sanso</a>
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- ─── KIYOMIZU-DERA ─── -->
+  <div class="section" id="kiyomizu">
+    <div class="section-label">
+      <span class="section-time">11:15 AM</span>
+      <div class="section-rule"></div>
+      <span class="section-tag red">Kiyomizu-dera</span>
+    </div>
+    <h2>The <em>Stage</em> Over the Forest</h2>
+    <p class="tagline">Built without a single nail — cantilevered over a cedar ravine since 1633</p>
+
+    <p class="prose">Kiyomizu-dera means "Pure Water Temple," named for the waterfall that runs beneath it. The temple complex sprawls across the eastern slope of Otowa-san mountain and is best understood not as a single building but as a series of experiences connected by stone paths. Give yourself at least 45 minutes and move through it unhurriedly.</p>
+
+    <p class="prose">The approach up Chawan-zaka (Teapot Lane) and then Sannenzaka is part of the experience — the stone steps lined with souvenir shops and clay-walled houses prepare you atmospherically for what's above. Buy a small ceramic piece here rather than at the temple — the shops along the approach carry Kiyomizu-yaki pottery that's been made in this district for 400 years.</p>
+
+    <div class="highlights">
+      <div class="highlight">
+        <div class="highlight-bar"></div>
+        <div class="highlight-content">
+          <h3>The Main Hall Veranda</h3>
+          <p>The iconic wooden stage extends 13 meters out from the main hall over the cedar ravine below, supported by 139 pillars fitted together without a single nail — a joinery technique called "wooden nail construction." The view west over Kyoto's rooftops is best in morning light. An old Japanese saying — "to jump off the stage at Kiyomizu" — means to take a bold, daring decision. During the Edo period, people actually did jump, believing survivors would have their wish granted. 234 jumps were recorded; 85% survived.</p>
+          <span class="tip">Look back at the main hall from the far left of the veranda for the best composition.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar gold"></div>
+        <div class="highlight-content">
+          <h3>Otowa Waterfall</h3>
+          <p>At the base of the main hall, three separate streams fall from a rocky grotto into a pool below. Each stream is said to grant a different wish: longevity, love success, and academic achievement. Visitors use long-handled ladles to drink. The legend clearly states that drinking from all three is greedy — pick one intentionally and make it mean something.</p>
+          <span class="tip">The queue moves quickly. This is one of those interactive moments the whole family will remember.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar moss"></div>
+        <div class="highlight-content">
+          <h3>Jishu Shrine — the Love Stones</h3>
+          <p>Directly behind the main hall, Jishu Shrine is dedicated to the deity of love and matchmaking. Two stones sit 18 meters apart in the courtyard — the challenge is to walk from one to the other with eyes completely closed. Success means you will find love; requiring guidance along the way means you'll need help in matters of the heart. Enormously fun with kids, who will invariably cheat.</p>
+          <span class="tip">Free to enter with temple admission. Allow 10 minutes here.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar stone"></div>
+        <div class="highlight-content">
+          <h3>Tainai-meguri — The Womb Passage</h3>
+          <p>Beneath one of the subsidiary halls, a stone corridor descends into complete, absolute darkness. You follow a rope through a pitch-black passage representing the womb of the goddess Daizuizaiten — the journey symbolises death and rebirth. It takes about five minutes. The darkness is total; there is genuinely nothing to see, which is entirely the point. Children tend to find it either thrilling or terrifying. Often both.</p>
+          <span class="tip">¥200 per person, separate from main admission. Worth every yen for the story alone.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar"></div>
+        <div class="highlight-content">
+          <h3>The Three-Story Pagoda</h3>
+          <p>On the stone approach path below the main hall, the vermillion pagoda against the cedar trees is the most reproduced image of Kiyomizu. Stop here on the way in and frame the main hall behind it — this is the photograph you'll show people when you get home.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="practical">
+      <div class="practical-title">Practical Notes</div>
+      <ul>
+        <li>Entry: ¥500 per adult, ¥200 children · Tainai-meguri ¥200 extra · Jishu Shrine free with admission</li>
+        <li>Cash or IC card accepted at the gate</li>
+        <li>Budget ¥1,500–2,000 per adult for the full complex experience</li>
+        <li>Remove shoes before entering the main hall interiors</li>
+        <li>Photography is permitted throughout — no restrictions</li>
+      </ul>
+    </div>
+
+    <div class="maps">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Temple+Kyoto" rel="noopener" target="_blank">Kiyomizu-dera</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Jishu+Shrine+Kyoto" rel="noopener" target="_blank">Jishu Shrine</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Otowa+Waterfall+Kiyomizu" rel="noopener" target="_blank">Otowa Waterfall</a>
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- ─── SANNENZAKA ─── -->
+  <div class="section" id="sannenzaka">
+    <div class="section-label">
+      <span class="section-time">12:00 PM</span>
+      <div class="section-rule"></div>
+      <span class="section-tag gold">Sannenzaka · Ninenzaka</span>
+    </div>
+    <h2>The <em>Cobblestone</em> Descent</h2>
+    <p class="tagline">Walk slowly. The atmosphere is the destination.</p>
+
+    <p class="prose">Sannenzaka — Three Year Slope — and Ninenzaka — Two Year Slope — are preserved Meiji-era streets that feel genuinely unchanged because they legally are: the entire area is a protected historical district where even signage and power lines are regulated. The names refer to a legend that stumbling on these steps brings three or two years of bad luck respectively, which means you'll see everyone walking with exaggerated care.</p>
+
+    <p class="prose">The temptation is to treat this as a shopping corridor, and it partly is. But look above the shop fronts — the machiya townhouse architecture, the latticed wooden facades, the clay-walled rooflines — is the real experience. Walk the first pass without entering anything, just taking it in. Then double back for anything that caught your attention.</p>
+
+    <div class="highlights">
+      <div class="highlight">
+        <div class="highlight-bar moss"></div>
+        <div class="highlight-content">
+          <h3>Kasagiya — the Historic Sweets Shop</h3>
+          <p>A tiny, deeply atmospheric sweets shop that has been on Ninenzaka for over a century. The specialty is oshiruko — a warm red bean soup with soft mochi — served in simple ceramic bowls in a traditional interior. It seats perhaps 12 people. This is not a tourist trap; it is exactly what it has always been. Take 15 minutes, sit down, and let the kids try the wagashi (Japanese sweets). This is the tea stop to choose.</p>
+          <span class="tip">No need to rush past. Queue outside if full — it moves quickly.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar stone"></div>
+        <div class="highlight-content">
+          <h3>The Sannenzaka Starbucks</h3>
+          <p>This sounds wrong and yet it isn't. The Starbucks on Sannenzaka occupies a beautifully restored 100-year-old machiya townhouse across two floors, with tatami seating areas, low wooden beams, and a garden view. It is genuinely one of the most striking coffee shop interiors in Japan. You don't have to buy anything — walk through and look up.</p>
+          <span class="tip">Second floor has tatami mat seating. Worth seeing even if the queue is long.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar gold"></div>
+        <div class="highlight-content">
+          <h3>Kiyomizu-yaki Pottery Shops</h3>
+          <p>Kyoto's signature ceramic tradition — distinctive for its colorful overglaze enamels on white porcelain — originated in the workshops around this temple district. The shops along Sannenzaka carry better quality and more authentic pieces than anywhere else in the city. Look for small yunomi teacups, tokkuri sake flasks, or chopstick rests as meaningful souvenirs that pack easily.</p>
+          <span class="tip">Prices range from ¥800 for small pieces to several thousand for handmade work. Bargaining is not customary.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn">
+      <b>Pacing note:</b> The descent from Kiyomizu to the bottom of Ninenzaka is only about 800 meters. Don't burn too much time here — you have a 1:30 PM reservation at Tempura Endo and Gion backstreets after lunch. One intentional browse and one tea stop is the right rhythm.
+    </div>
+
+    <div class="maps">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sannenzaka+Kyoto" rel="noopener" target="_blank">Sannenzaka</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ninenzaka+Kyoto" rel="noopener" target="_blank">Ninenzaka</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kasagiya+Kyoto+Ninenzaka" rel="noopener" target="_blank">Kasagiya</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Starbucks+Sannenzaka+Kyoto" rel="noopener" target="_blank">Starbucks Machiya</a>
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- ─── TEMPURA ENDO ─── -->
+  <div class="section" id="lunch">
+    <div class="section-label">
+      <span class="section-time">1:30 PM</span>
+      <div class="section-rule"></div>
+      <span class="section-tag red">Reservation Confirmed</span>
+    </div>
+    <h2>Tempura Endo <em>Yasaka</em></h2>
+    <p class="tagline">Lunch · reservation confirmed · allow 60–75 minutes</p>
+
+    <p class="prose">Tempura at its finest is nothing like the battered-everything-deep-fried version familiar from outside Japan. At a dedicated tempura restaurant, each piece is individually fried to order in refined sesame oil, served immediately, and consumed within seconds of leaving the oil. The batter is feather-light — barely there — and the point is the ingredient inside, not the coating around it. Seasonal vegetables, fresh seafood, river fish. Yasaka is in the heart of Gion and a perfect pivot point between the Higashiyama temples and the afternoon backstreets wander.</p>
+
+    <div class="practical">
+      <div class="practical-title">Reservation Notes</div>
+      <ul>
+        <li>Reservation confirmed for 1:30 PM — arrive 5 minutes early</li>
+        <li>Inform staff of any dietary restrictions when seated</li>
+        <li>Allow 60–75 minutes — do not rush this meal</li>
+        <li>Counter seating likely — kids will enjoy watching the chef work</li>
+      </ul>
+    </div>
+
+    <div class="maps">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tempura+Endo+Yasaka+Kyoto" rel="noopener" target="_blank">Tempura Endo Yasaka</a>
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- ─── MIYAKO ODORI ─── -->
+  <div class="section" id="miyako-odori">
+    <div class="section-label">
+      <span class="section-time">2:30 PM</span>
+      <div class="section-rule"></div>
+      <span class="section-tag red">Reservation Confirmed</span>
+    </div>
+    <h2><em>Miyako Odori</em> — The Gion Dances</h2>
+    <p class="tagline">A tradition of spring geiko performance that has run every April since 1872</p>
+
+    <p class="prose">The Miyako Odori — literally "Capital Dances" — are Kyoto's most famous seasonal geiko performance, staged every April by the geiko and maiko of the Gion Kobu district, just a short walk from Tempura Endo. The performances have run continuously since they were first staged at the 1872 Kyoto Exhibition to draw visitors to the city after the capital moved to Tokyo. The staging is elaborate: multiple acts, traditional music played live, costumes that change with each tableau. It is one of the very few opportunities to see maiko and geiko perform in a formal setting rather than glimpsing them on the street.</p>
+
+    <p class="prose">The performance runs approximately 55 minutes. Your reservation is at 2:30 PM — a short walk from Tempura Endo Yasaka, which is itself in the Gion area. The theater is the Gion Kobu Kaburenjo, the historic performance hall of the district.</p>
+
+    <div class="maps">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gion+Kobu+Kaburenjo+Miyako+Odori+Kyoto" rel="noopener" target="_blank">Miyako Odori</a>
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- ─── GION ─── -->
+  <div class="section" id="gion">
+    <div class="section-label">
+      <span class="section-time">3:45 PM</span>
+      <div class="section-rule"></div>
+      <span class="section-tag stone">Gion</span>
+    </div>
+    <h2>The <em>Geisha</em> Backstreets</h2>
+    <p class="tagline">Leave the main streets. The real Gion is one block deeper.</p>
+
+    <p class="prose">Gion is Kyoto's most famous geisha district and one of the best-preserved historic districts in Japan. Most visitors walk Hanamikoji Street, photograph the ochaya teahouses, and leave. The family who goes one block further finds a completely different Kyoto.</p>
+
+    <div class="highlights">
+      <div class="highlight">
+        <div class="highlight-bar"></div>
+        <div class="highlight-content">
+          <h3>Hanamikoji Street</h3>
+          <p>The iconic north-south street lined with traditional ochaya (teahouses) where geiko entertain wealthy clients behind closed doors. The wooden latticed facades, stone pathways, and red lanterns are exactly as you imagine them. Late afternoon — which is when you'll be here — is when geiko and maiko sometimes pass en route to evening engagements. If you see one, do not follow or photograph without permission; it is considered deeply rude and there are now official regulations against it. Observe from a respectful distance.</p>
+          <span class="tip">The south half of Hanamikoji (below Shijo-dori) is the most atmospheric and least crowded.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar gold"></div>
+        <div class="highlight-content">
+          <h3>Shirakawa Canal — the hidden gem</h3>
+          <p>One block north of Hanamikoji, a narrow canal runs alongside weeping willow and cherry trees, crossed by small stone bridges and lined with stone lanterns. This is Gion Shirakawa, and it is significantly less visited than the main streets despite being arguably more beautiful. The ochaya buildings along the canal are reflected in the water on still afternoons. If any cherry blossom remains from the late season, this is where it will be most atmospheric. This is the single most underrated spot in Gion — walk the full length of it slowly.</p>
+          <span class="tip">Best between 3–5 PM in afternoon light. The canal runs roughly parallel to Nawate-dori.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar moss"></div>
+        <div class="highlight-content">
+          <h3>Gion Shinbashi</h3>
+          <p>At the north end of Shirakawa Canal, the intersection known as Tatsumi-bashi is the most photographed corner in Kyoto — traditional ochaya buildings reflected in the canal water, stone lanterns glowing, willow branches trailing. Frame it from the small stone bridge looking south. This is a photograph worth taking your time over.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar"></div>
+        <div class="highlight-content">
+          <h3>Yasaka Shrine</h3>
+          <p>At the western terminus of Shijo-dori, Yasaka Shrine anchors the Gion district with a vivid vermillion gate (Nishiromon) that makes for one of the great family photographs of the trip. The shrine grounds are free to enter and spacious — a good place to let the kids decompress before the journey back to Osaka. The central hall is lit in the afternoon and the stone lanterns begin to glow at dusk.</p>
+          <span class="tip">Free entry. The main gate faces west — photograph it with afternoon light behind you.</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar gold"></div>
+        <div class="highlight-content">
+          <h3>Taiga Takahashi — Hanamikoji</h3>
+          <p>A small, serious menswear shop on Hanamikoji Street (570-120 Gionmachi Minamigawa) — refined Japanese workwear and craft clothing, the kind of considered basics and textiles that don't exist in department stores. You're walking right past it. Opens 12pm. Worth 20–30 minutes if you're into Japanese craft clothing. The shop itself is a quiet contrast to the performance and history around it.</p>
+          <span class="tip">Located on Hanamikoji — the same street as the main geisha district walk. No overlap required.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull">
+      <p>Kyoto has 1,600 Buddhist temples and 400 Shinto shrines. Gion has survived centuries precisely because it refused to be anything other than what it is.</p>
+      <cite>Gion district, Kyoto — established as a geisha district c. 1670</cite>
+    </div>
+
+    <div class="kids">
+      <div class="kids-title">For the kids in Gion</div>
+      <p>Gion can feel abstract for children — the history and architecture don't immediately compute. Two things that tend to land: the <strong>stone bridge at Tatsumi-bashi</strong> (they can throw coins in the canal) and the <strong>Yasaka Shrine grounds</strong> where there's space to run and explore. If you pass a geiko or maiko, frame it as spotting something rare — a real-life glimpse of a tradition that has existed for 350 years and that very few people outside Japan ever see.</p>
+    </div>
+
+    <div class="maps">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hanamikoji+Street+Gion+Kyoto" rel="noopener" target="_blank">Hanamikoji</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Taiga+Takahashi+Gion+Kyoto" rel="noopener" target="_blank">Taiga Takahashi</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gion+Shirakawa+Canal+Kyoto" rel="noopener" target="_blank">Shirakawa Canal</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gion+Shinbashi+Kyoto" rel="noopener" target="_blank">Gion Shinbashi</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Yasaka+Shrine+Kyoto" rel="noopener" target="_blank">Yasaka Shrine</a>
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- ─── DINNER / RETURN ─── -->
+  <div class="section" id="dinner">
+    <div class="section-label">
+      <span class="section-time">5:30 PM onwards</span>
+      <div class="section-rule"></div>
+      <span class="section-tag">Return to Osaka</span>
+    </div>
+    <h2>Back to Osaka — <em>Dotonbori</em> Night</h2>
+    <p class="tagline">Return to Osaka · rest briefly · then Dotonbori street food circuit</p>
+
+    <p class="prose">Return from Kawaramachi to Osaka on the Hankyu-Kyoto Semi-Limited Express → Awaji (~25 min, ¥860pp, tap Suica), then taxi from Awaji back to the hotel (~16 min, ~¥2,000–2,500 total) or a short southbound train. Give the family 30–45 minutes to rest and freshen up, then head to Dotonbori for the evening — the neon canal district that is Osaka's most kinetic food experience.</p>
+
+    <div class="highlights">
+      <div class="highlight">
+        <div class="highlight-bar"></div>
+        <div class="highlight-content">
+          <h3>Dotonbori Structured Flow</h3>
+          <p><strong>6:00</strong> — Canal orientation walk under the Glico running man sign. Start here, get your bearings, absorb the neon.<br>
+          <strong>6:20</strong> — Takoyaki: pick one strong stand (look for the longest queue of locals, not tourists).<br>
+          <strong>6:45</strong> — Kushikatsu at Daruma — the Osaka original, battered and fried skewers dipped once in shared sauce. The rule: never double dip. A house rule so serious they have signs about it.<br>
+          <strong>7:30</strong> — Okonomiyaki at Fukutaro — one of the most respected okonomiyaki restaurants in Osaka, known for their Osaka-style (not Hiroshima-style) preparation. Reservations recommended.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar gold"></div>
+        <div class="highlight-content">
+          <h3>Late Night Dessert</h3>
+          <p>Rikuro's Cheesecake — their freshly baked jiggly soufflé cheesecake comes out of the oven on the hour and sells out within minutes. Pablo Cheese Tart if Rikuro's timing doesn't align. Gram Pancakes for the full fluffy Japanese pancake experience if the kids still have room.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="maps">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" rel="noopener" target="_blank">Dotonbori</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kushikatsu+Daruma+Dotonbori" rel="noopener" target="_blank">Kushikatsu Daruma</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fukutaro+Okonomiyaki+Namba+Osaka" rel="noopener" target="_blank">Fukutaro</a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rikuro+Ojisan+Namba" rel="noopener" target="_blank">Rikuro's</a>
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- ─── LOGISTICS ─── -->
+  <div class="section" id="logistics">
+    <div class="section-label">
+      <span class="section-time">Day Logistics</span>
+      <div class="section-rule"></div>
+      <span class="section-tag stone">Reference</span>
+    </div>
+    <h2>Getting <em>There</em> & Around</h2>
+
+    <div class="practical">
+      <div class="practical-title">Morning — Namba to Arashiyama</div>
+      <ul>
+        <li><strong>7:00 AM</strong> — Taxi from Caption by Hyatt Namba hotel door → Awaji Station (~16 min, ~¥2,000–2,500). Ask concierge to call the cab the night before. No walking through tourist areas.</li>
+        <li>Show driver: <strong>阪急京都線 淡路駅</strong> or say "Awaji Eki, onegaishimasu"</li>
+        <li><strong>~7:20 AM</strong> — Hankyu-Kyoto Line <strong>Semi-Limited Express</strong> toward Kyoto-Kawaramachi from Platform 2/3 at Awaji. 25 min, 4 stops. Tap Suica at the gate. ¥860pp.</li>
+        <li><strong>~7:45 AM</strong> — Katsura Station — 2 min walk to Platform C/1 → Hankyu-Arashiyama Line local toward Arashiyama. 5 min, 2 stops.</li>
+        <li><strong>~7:50 AM</strong> — Matsuo-Taisha Station — exit via East Gates → 2 min walk to bus stop → <strong>28 City Bus</strong> (Daikakuji Temple via Arashiyama, Platform D). 7 min, 6 stops to Nonomiya stop.</li>
+        <li><strong>~8:05 AM</strong> — Nonomiya bus stop → 6 min walk to Bamboo Grove</li>
+        <li><strong>8:15 AM</strong> — Arrive Arashiyama ✅ — 30 min earlier than original plan, early morning light, fewer crowds</li>
+      </ul>
+    </div>
+
+    <div class="practical" style="margin-top:12px">
+      <div class="practical-title">Midday — Arashiyama to Higashiyama</div>
+      <ul>
+        <li><strong>10:15 AM</strong> — Taxi from Arashiyama → Higashiyama / Kiyomizu (~30–35 min, ~¥3,500)</li>
+        <li>Show driver: <strong>清水寺 山門</strong> or say "Kiyomizu-dera Sanmon, onegaishimasu"</li>
+        <li>Higashiyama is walkable — Kiyomizu → Sannenzaka → Ninenzaka → Tempura Endo is all on foot, all downhill. Sannenzaka shops open from 10am ✅ fully open by arrival.</li>
+      </ul>
+    </div>
+
+    <div class="practical" style="margin-top:12px">
+      <div class="practical-title">Afternoon — Gion & Return to Osaka</div>
+      <ul>
+        <li>Gion is a 10-min walk from Tempura Endo Yasaka</li>
+        <li>Taiga Takahashi (Hanamikoji) is on the Gion backstreets walk — allow 20–30 min</li>
+        <li><strong>~5:30 PM</strong> — Walk or short taxi to Kawaramachi Station (~10 min walk)</li>
+        <li>Hankyu-Kyoto Line Semi-Limited Express → Awaji (~25 min, ¥860pp, tap Suica) — then any line south back toward Namba, or grab a taxi from Awaji (~16 min, ~¥2,000–2,500)</li>
+        <li>Back at Caption by Hyatt Namba by ~7:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="practical" style="margin-top:12px">
+      <div class="practical-title">Budget Reference (per adult)</div>
+      <ul>
+        <li>Morning taxi hotel → Awaji Station: ~¥500–625pp (shared, ~¥2,000–2,500 total)</li>
+        <li>Train Awaji → Katsura → Matsuo-Taisha + bus: ¥860pp each way</li>
+        <li>Taxi Arashiyama → Higashiyama: ~¥875pp (~¥3,500 total)</li>
+        <li>Evening taxi or train Kawaramachi → Namba: ¥860pp train or ~¥500–625pp taxi (shared)</li>
+        <li>Kiyomizu-dera entry: ¥500 + ¥200 Tainai-meguri</li>
+        <li>Okochi Sanso entry: ¥1,000 (includes matcha)</li>
+        <li>Tenryu-ji garden: ¥500</li>
+        <li>Rickshaw (optional): ~¥5,000 for two</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<footer>
+  Apr 6, 2026 · Kyoto Day Guide · Adams Family Japan Trip &nbsp;·&nbsp;
+  <a href="Japan_Trip_Plan_v61.html">← Back to full itinerary</a>
+</footer>
+
+</body>
+</html>
