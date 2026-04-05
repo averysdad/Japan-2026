@@ -1,6 +1,7 @@
 const CACHE = 'japan-trip-v61';
 const ASSETS = [
   'Japan_Trip_Plan_v61.html',
+  'Japan_Apr6_Kyoto_DayGuide.html',
   'manifest.json'
 ];
 
